@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NubipApp.API", "NubipApp.API\NubipApp.API.csproj", "{9A4BFB42-60CF-4DC0-99C8-60CD50ADB4B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NubipApp.Models", "NubipApp.Models\NubipApp.Models.csproj", "{1703DDC4-0AFC-470D-AF6A-A6DA5E850B90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NubipApp.Core", "NubipApp.Core\NubipApp.Core.csproj", "{C2940047-83DE-4ED2-8CF2-EA07E59D887E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NubipApp.Domain", "NubipApp.Domain\NubipApp.Domain.csproj", "{36BBB0C3-ABC2-40BD-9DE8-8A17ECF9D352}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NubipApp.Services", "NubipApp.Services\NubipApp.Services.csproj", "{F8F8BE8A-008F-49B7-931D-0FDA5BF58549}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NubipApp.Persistence", "NubipApp.Persistence\NubipApp.Persistence.csproj", "{71042B3A-6B59-40EE-8D33-6437E6B39227}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A4BFB42-60CF-4DC0-99C8-60CD50ADB4B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A4BFB42-60CF-4DC0-99C8-60CD50ADB4B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A4BFB42-60CF-4DC0-99C8-60CD50ADB4B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A4BFB42-60CF-4DC0-99C8-60CD50ADB4B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1703DDC4-0AFC-470D-AF6A-A6DA5E850B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1703DDC4-0AFC-470D-AF6A-A6DA5E850B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1703DDC4-0AFC-470D-AF6A-A6DA5E850B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1703DDC4-0AFC-470D-AF6A-A6DA5E850B90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2940047-83DE-4ED2-8CF2-EA07E59D887E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2940047-83DE-4ED2-8CF2-EA07E59D887E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2940047-83DE-4ED2-8CF2-EA07E59D887E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2940047-83DE-4ED2-8CF2-EA07E59D887E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36BBB0C3-ABC2-40BD-9DE8-8A17ECF9D352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36BBB0C3-ABC2-40BD-9DE8-8A17ECF9D352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36BBB0C3-ABC2-40BD-9DE8-8A17ECF9D352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36BBB0C3-ABC2-40BD-9DE8-8A17ECF9D352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F8BE8A-008F-49B7-931D-0FDA5BF58549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F8BE8A-008F-49B7-931D-0FDA5BF58549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F8BE8A-008F-49B7-931D-0FDA5BF58549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F8BE8A-008F-49B7-931D-0FDA5BF58549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71042B3A-6B59-40EE-8D33-6437E6B39227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71042B3A-6B59-40EE-8D33-6437E6B39227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71042B3A-6B59-40EE-8D33-6437E6B39227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71042B3A-6B59-40EE-8D33-6437E6B39227}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
