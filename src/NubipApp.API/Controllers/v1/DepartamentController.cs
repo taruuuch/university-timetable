@@ -15,7 +15,7 @@ namespace NubipApp.API.Controllers.v1
         }
         
         [HttpGet("")]
-        public JsonResult Departament()
+        public JsonResult GetList()
         {
             var json =
                 db.Departaments
@@ -29,7 +29,7 @@ namespace NubipApp.API.Controllers.v1
         }
         
         [HttpGet("{id}/teachers")]
-        public JsonResult TeacherOfDepartament(int id)
+        public JsonResult GetTeacherOfDepartament(int id)
         {
             var json =
                  db.Teachers
