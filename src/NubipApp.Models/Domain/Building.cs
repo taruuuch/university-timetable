@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace NubipApp.Models
+namespace NubipApp.Models.Domain
 {
     public class Building
     {

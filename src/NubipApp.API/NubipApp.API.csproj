@@ -1,15 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
-
-    <PropertyGroup>
-        <TargetFramework>netcoreapp2.1</TargetFramework>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <Folder Include="wwwroot\"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.App"/>
-    </ItemGroup>
-
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors">
+      <Version>2.1.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NubipApp.Core\NubipApp.Core.csproj" />
+    <ProjectReference Include="..\NubipApp.Models\NubipApp.Models.csproj" />
+    <ProjectReference Include="..\NubipApp.Persistence\NubipApp.Persistence.csproj" />
+  </ItemGroup>
 </Project>

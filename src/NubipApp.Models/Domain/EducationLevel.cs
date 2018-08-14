@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace NubipApp.Models
+namespace NubipApp.Models.Domain
 {
-    public class EducationForm
+    public class EducationLevel
     {
-        public int EducationFormId { get; set; }
+        public int EducationLevelId { get; set; }
         public string Title { get; set; }
         
         public ICollection<Group> Groups { get; set; }

@@ -3,4 +3,19 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <LangVersion>7.2</LangVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Configurations" />
+    <Folder Include="Migrations" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+      <Version>2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL">
+      <Version>2.1.1.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NubipApp.Models\NubipApp.Models.csproj" />
+  </ItemGroup>
 </Project>

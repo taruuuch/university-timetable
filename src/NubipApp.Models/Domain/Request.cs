@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NubipApp.Models
+namespace NubipApp.Models.Domain
 {
     public class Request
     {

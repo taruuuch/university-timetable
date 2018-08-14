@@ -1,4 +1,4 @@
-﻿namespace NubipApp.Models
+﻿namespace NubipApp.Models.Domain
 {
     public class Lesson
     {
