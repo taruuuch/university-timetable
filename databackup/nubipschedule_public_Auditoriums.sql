@@ -1,0 +1,13 @@
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (1, 213, 1, 25, 1);
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (2, 214, 1, 25, 1);
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (3, 230, 1, 100, 2);
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (4, 231, 1, 100, 2);
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (5, 232, 1, 60, 2);
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (6, 233, 1, 30, 1);
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (7, 225, 1, 15, 1);
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (8, 222, 1, 15, 1);
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (9, 223, 1, 15, 1);
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (10, 224, 1, 15, 1);
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (11, 501, 2, 20, 1);
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (12, 111, 2, 60, 2);
+INSERT INTO public."Auditoriums" ("AuditoriumId", "Number", "BuildingId", "SeatseCount", "AuditoriumTypeId") VALUES (13, 75, 3, 30, 3);

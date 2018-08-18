@@ -1,0 +1,13 @@
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (2, '50.383603', '30.494751', 10);
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (1, '50.381384', '30.495908', 15);
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (3, '50.3806934', '30.4935234', 11);
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (4, '50.3837013', '30.4925839', 8);
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (5, '50.3840249', '30.4944395', 4);
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (6, '50.3837277', '30.4991737', 3);
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (7, '50.3839224', '30.5022808', 2);
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (8, '50.3837617', '30.5043997', 1);
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (9, '50.3803984', '30.4857473', 12);
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (10, '50.382367', '30.493346', 7);
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (11, '50.383000', '30.496637', 9);
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (12, '50.3941886', '30.4976719', 6);
+INSERT INTO public."Buildings" ("BuildingId", "Latitude", "Longitude", "Number") VALUES (13, '50.381927', '30.4942113', 5);

@@ -1,0 +1,8 @@
+INSERT INTO public."Times" ("TimeId", "Number", "Start", "End") VALUES (1, 1, 0 years 0 mons 0 days 8 hours 30 mins 0.00 secs, 0 years 0 mons 0 days 9 hours 50 mins 0.00 secs);
+INSERT INTO public."Times" ("TimeId", "Number", "Start", "End") VALUES (2, 2, 0 years 0 mons 0 days 10 hours 5 mins 0.00 secs, 0 years 0 mons 0 days 11 hours 25 mins 0.00 secs);
+INSERT INTO public."Times" ("TimeId", "Number", "Start", "End") VALUES (3, 3, 0 years 0 mons 0 days 11 hours 40 mins 0.00 secs, 0 years 0 mons 0 days 13 hours 0 mins 0.00 secs);
+INSERT INTO public."Times" ("TimeId", "Number", "Start", "End") VALUES (4, 4, 0 years 0 mons 0 days 13 hours 15 mins 0.00 secs, 0 years 0 mons 0 days 14 hours 35 mins 0.00 secs);
+INSERT INTO public."Times" ("TimeId", "Number", "Start", "End") VALUES (5, 5, 0 years 0 mons 0 days 14 hours 50 mins 0.00 secs, 0 years 0 mons 0 days 16 hours 10 mins 0.00 secs);
+INSERT INTO public."Times" ("TimeId", "Number", "Start", "End") VALUES (6, 6, 0 years 0 mons 0 days 16 hours 25 mins 0.00 secs, 0 years 0 mons 0 days 17 hours 45 mins 0.00 secs);
+INSERT INTO public."Times" ("TimeId", "Number", "Start", "End") VALUES (7, 7, 0 years 0 mons 0 days 18 hours 0 mins 0.00 secs, 0 years 0 mons 0 days 19 hours 20 mins 0.00 secs);
+INSERT INTO public."Times" ("TimeId", "Number", "Start", "End") VALUES (8, 8, 0 years 0 mons 0 days 19 hours 35 mins 0.00 secs, 0 years 0 mons 0 days 20 hours 55 mins 0.00 secs);

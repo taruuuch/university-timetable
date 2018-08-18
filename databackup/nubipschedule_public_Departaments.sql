@@ -1,0 +1,3 @@
+INSERT INTO public."Departaments" ("DepartamentId", "Title", "Dean", "FacultyId", "Email") VALUES (1, 'Компютерних наук', 'Голуб Белла Львівна', 1, null);
+INSERT INTO public."Departaments" ("DepartamentId", "Title", "Dean", "FacultyId", "Email") VALUES (2, 'Кафедра банківської справи', 'Олійник-Данн Олена Олександрівна', 4, 'banking_chair@nubip.edu.ua');
+INSERT INTO public."Departaments" ("DepartamentId", "Title", "Dean", "FacultyId", "Email") VALUES (3, 'Кафедра економічної теорії', 'Талавиря Микола Петрович', 2, 'ekteor_chair@nubip.edu.ua');

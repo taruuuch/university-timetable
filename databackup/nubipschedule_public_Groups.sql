@@ -1,0 +1,9 @@
+INSERT INTO public."Groups" ("GroupId", "Title", "SpecialityId", "TeacherId", "StudentCount", "IsActive", "EducationFormId", "EducationLevelId") VALUES (4, 'ПІ-1506', 1, 3, 17, true, 1, 2);
+INSERT INTO public."Groups" ("GroupId", "Title", "SpecialityId", "TeacherId", "StudentCount", "IsActive", "EducationFormId", "EducationLevelId") VALUES (5, 'КІ-1504', 3, 1, 7, true, 1, 2);
+INSERT INTO public."Groups" ("GroupId", "Title", "SpecialityId", "TeacherId", "StudentCount", "IsActive", "EducationFormId", "EducationLevelId") VALUES (6, 'КН-1503', 2, 3, 20, true, 1, 2);
+INSERT INTO public."Groups" ("GroupId", "Title", "SpecialityId", "TeacherId", "StudentCount", "IsActive", "EducationFormId", "EducationLevelId") VALUES (7, 'КН-1502', 2, 1, 20, true, 1, 2);
+INSERT INTO public."Groups" ("GroupId", "Title", "SpecialityId", "TeacherId", "StudentCount", "IsActive", "EducationFormId", "EducationLevelId") VALUES (8, 'КН-1701', 2, 2, 20, true, 1, 2);
+INSERT INTO public."Groups" ("GroupId", "Title", "SpecialityId", "TeacherId", "StudentCount", "IsActive", "EducationFormId", "EducationLevelId") VALUES (9, 'ПІ-1701', 1, 3, 20, true, 1, 2);
+INSERT INTO public."Groups" ("GroupId", "Title", "SpecialityId", "TeacherId", "StudentCount", "IsActive", "EducationFormId", "EducationLevelId") VALUES (10, 'ПІ-1601', 1, 1, 20, true, 1, 2);
+INSERT INTO public."Groups" ("GroupId", "Title", "SpecialityId", "TeacherId", "StudentCount", "IsActive", "EducationFormId", "EducationLevelId") VALUES (11, 'ПІ-1602', 1, 2, 20, true, 1, 2);
+INSERT INTO public."Groups" ("GroupId", "Title", "SpecialityId", "TeacherId", "StudentCount", "IsActive", "EducationFormId", "EducationLevelId") VALUES (12, 'ЕП-1701', 4, 3, 20, true, 1, 2);
