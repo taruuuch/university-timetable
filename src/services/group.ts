@@ -1,4 +1,4 @@
-const { groupDb } = require('../db');
+import groupDb from '../db';
 
 const getGroup = async (user, context) => {
     try {
@@ -8,6 +8,4 @@ const getGroup = async (user, context) => {
     };
 };
 
-module.exports = {
-    getGroup
-};
+export default getGroup;
