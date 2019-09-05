@@ -18,12 +18,16 @@ _Feedback from the Chair of Computer Science:_
 
 _Backend_
 
-* .NET Core 2.1
-* Entity Framework Core
+* Node.js
+* Express (web framework for create api)
+* MongoDb (database)
+* Passport (for auth users)
 
 _Frontend_
 
-* React
+* Vuejs
+* Vuex
+* TypeScript
 * CSS3
 
 <!-- Test scripts
