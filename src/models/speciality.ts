@@ -2,10 +2,14 @@ import mongoose from "mongoose";
 
 let Schema = mongoose.Schema;
 
-let NameSchema = new Schema({
-	nameId: String,
+let SpecialitySchema = new Schema({
+	specialityId: Number,
+	title: String,
+	facultyId: [{
+		type: Schema.Types.ObjectId, ref: 'Faculty'
+	}]
 });
 
-let Name = mongoose.model('Name', NameSchema);
+let Speciality = mongoose.model('Speciality', SpecialitySchema);
 
-export default Name;
+export default Speciality;

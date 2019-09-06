@@ -2,10 +2,28 @@ import mongoose from "mongoose";
 
 let Schema = mongoose.Schema;
 
-let NameSchema = new Schema({
-	nameId: String,
+let LessonSchema = new Schema({
+	lessonId: Number,
+	curriculumId: [{
+		type: Schema.Types.ObjectId, ref: 'Curriculum'
+	}],
+	groupId: [{
+		type: Schema.Types.ObjectId, ref: 'Group'
+	}],
+	teacherId: [{
+		type: Schema.Types.ObjectId, ref: 'Teacher'
+	}],
+	auditoriumId: [{
+		type: Schema.Types.ObjectId, ref: 'Auditorium'
+	}],
+	timeId: [{
+		type: Schema.Types.ObjectId, ref: 'Time'
+	}],
+	day: String,
+	week: Number,
+	subGroup: Number,
 });
 
-let Name = mongoose.model('Name', NameSchema);
+let Lesson = mongoose.model('Lesson', LessonSchema);
 
-export default Name;
+export default Lesson;

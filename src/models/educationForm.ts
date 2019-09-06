@@ -2,10 +2,11 @@ import mongoose from "mongoose";
 
 let Schema = mongoose.Schema;
 
-let NameSchema = new Schema({
-	nameId: String,
+let EducationFormSchema = new Schema({
+	educationFormId: Number,
+	title: String
 });
 
-let Name = mongoose.model('Name', NameSchema);
+let EducationForm = mongoose.model('EducationForm', EducationFormSchema);
 
-export default Name;
+export default EducationForm;
