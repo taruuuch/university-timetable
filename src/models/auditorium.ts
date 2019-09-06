@@ -2,10 +2,18 @@ import mongoose from "mongoose";
 
 let Schema = mongoose.Schema;
 
-let NameSchema = new Schema({
-	nameId: String,
+let AuditoriumSchema = new Schema({
+	nameId: Number,
+	number: Number,
+	buildingId: [{
+		type: Schema.Types.ObjectId, ref: 'Building'
+	}],
+	searseCount: Number,
+	auditoriumTypeId: [{
+		type: Schema.Types.ObjectId, ref: 'AuditoriumType'
+	}]
 });
 
-let Name = mongoose.model('Name', NameSchema);
+let Auditorium = mongoose.model('Auditorium', AuditoriumSchema);
 
-export default Name;
+export default Auditorium;

@@ -3,12 +3,20 @@ import mongoose from "mongoose";
 let Schema = mongoose.Schema;
 
 let GroupSchema = new Schema({
-	groupId: String,
+	groupId: Number,
 	title: String,
-	specialityId: Number,
-	teacherId: Number,
-	educationLevelId: Number,
-	educationFormId: Number,
+	specialityId: [{
+		type: Schema.Types.ObjectId, ref: 'Speciality'
+	}],
+	teacherId: [{
+		type: Schema.Types.ObjectId, ref: 'Teacher'
+	}],
+	educationLevelId: [{
+		type: Schema.Types.ObjectId, ref: 'EducationLevel'
+	}],
+	educationFormId: [{
+		type: Schema.Types.ObjectId, ref: 'EducationForm'
+	}],
 	studentCount: Number,
 	isActive: Boolean,
 });

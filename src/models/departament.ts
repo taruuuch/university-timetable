@@ -2,10 +2,16 @@ import mongoose from "mongoose";
 
 let Schema = mongoose.Schema;
 
-let NameSchema = new Schema({
-	nameId: String,
+let DepartamentSchema = new Schema({
+	departamentId: Number,
+	title: String,
+	dean: String,
+	facultyId: [{
+		type: Schema.Types.ObjectId, ref: 'Faculty'
+	}],
+	email: String
 });
 
-let Name = mongoose.model('Name', NameSchema);
+let Departament = mongoose.model('Departament', DepartamentSchema);
 
-export default Name;
+export default Departament;

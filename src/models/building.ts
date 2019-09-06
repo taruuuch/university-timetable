@@ -2,10 +2,13 @@ import mongoose from "mongoose";
 
 let Schema = mongoose.Schema;
 
-let NameSchema = new Schema({
-	nameId: String,
+let BuildingSchema = new Schema({
+	buildingId: Number,
+	number: Number,
+	latitude: String,
+	longitude: String
 });
 
-let Name = mongoose.model('Name', NameSchema);
+let Building = mongoose.model('Building', BuildingSchema);
 
-export default Name;
+export default Building;

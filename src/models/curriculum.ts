@@ -2,10 +2,19 @@ import mongoose from "mongoose";
 
 let Schema = mongoose.Schema;
 
-let NameSchema = new Schema({
-	nameId: String,
+let CurriculumSchema = new Schema({
+	curriculumId: Number,
+	departamentId: [{
+		type: Schema.Types.ObjectId, ref: 'Departament'
+	}],
+	subjectId: [{
+		type: Schema.Types.ObjectId, ref: 'Subject'
+	}],
+	lectionCount: Number,
+	labaratorCount: Number,
+	semester: Number,
 });
 
-let Name = mongoose.model('Name', NameSchema);
+let Curriculum = mongoose.model('Curriculum', CurriculumSchema);
 
-export default Name;
+export default Curriculum;

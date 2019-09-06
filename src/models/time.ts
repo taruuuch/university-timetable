@@ -2,10 +2,13 @@ import mongoose from "mongoose";
 
 let Schema = mongoose.Schema;
 
-let NameSchema = new Schema({
-	nameId: String,
+let TimeSchema = new Schema({
+	timeId: Number,
+	number: Number,
+	start: String,
+	end: String
 });
 
-let Name = mongoose.model('Name', NameSchema);
+let Time = mongoose.model('Time', TimeSchema);
 
-export default Name;
+export default Time;

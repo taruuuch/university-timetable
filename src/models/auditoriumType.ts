@@ -2,10 +2,12 @@ import mongoose from "mongoose";
 
 let Schema = mongoose.Schema;
 
-let NameSchema = new Schema({
-	nameId: String,
+let AuditoriumTypeSchema = new Schema({
+	auditoriumTypeId: Number,
+	title: String,
+	computer: Boolean
 });
 
-let Name = mongoose.model('Name', NameSchema);
+let AuditoriumType = mongoose.model('AuditoriumType', AuditoriumTypeSchema);
 
-export default Name;
+export default AuditoriumType;

@@ -2,10 +2,20 @@ import mongoose from "mongoose";
 
 let Schema = mongoose.Schema;
 
-let NameSchema = new Schema({
-	nameId: String,
+let RequestSchema = new Schema({
+	requestId: Number,
+	lessonId: [{
+		type: Schema.Types.ObjectId, ref: 'Lesson'
+	}],
+	timeId: [{
+		type: Schema.Types.ObjectId, ref: 'Time'
+	}],
+	from: Date,
+	to: Date,
+	requestTime: Date,
+	status: Boolean
 });
 
-let Name = mongoose.model('Name', NameSchema);
+let Request = mongoose.model('Request', RequestSchema);
 
-export default Name;
+export default Request;
