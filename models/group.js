@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 let Schema = mongoose.Schema;
 
-const groupSchema = Schema({
+const groupSchema = new Schema({
     groupId: mongoose.Schema.Types.ObjectId,
     title: {
 			type: String,

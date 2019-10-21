@@ -8,7 +8,17 @@ const groupRoutes = require('./routes/groups');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+
+mongoose.connect('mongodb://localhost/nubipschedule', {
+	useNewUrlParser: true,
+	useUnifiedTopology: true
+})
+.then(() => console.log('Server connected to MongoDB'))
+.catch(e => console.log(e));
+
+mongoose.Promise = global.Promise;
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -23,7 +33,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes which should handle requests
 app.use("/api/v1/groups", groupRoutes);
 
 app.use((req, res, next) => {
