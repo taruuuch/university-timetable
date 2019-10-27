@@ -4,14 +4,15 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
 const mongoose = require("mongoose");
-const groupRoutes = require('./routes/groups');
+const config = require('./config/config');
+const groupRoutes = require('./routes/group');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-mongoose.connect('mongodb://localhost/nubipschedule', {
+mongoose.connect(config.mongo, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 })
@@ -33,10 +34,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/v1/groups", groupRoutes);
+app.use('/api/v1/groups', groupRoutes);
 
 app.use((req, res, next) => {
-  const error = new Error("Not found");
+  const error = new Error('Not found');
   error.status = 404;
   next(error);
 });
