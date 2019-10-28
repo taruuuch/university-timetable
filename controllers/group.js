@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Group = require('../models/group');
 
-exports.get_all_groups = async (req, res, next) => {
+exports.getAllGroups = async (req, res, next) => {
 	await Group.find()
 	.exec()
 		.then(docs => {
@@ -14,7 +14,7 @@ exports.get_all_groups = async (req, res, next) => {
 		});
 };
 
-exports.add_group = async (req, res, next) => {
+exports.addGroup = async (req, res, next) => {
 	const group = new Group({
     _id: new mongoose.Types.ObjectId(),
     title: req.body.title,
@@ -36,10 +36,55 @@ exports.add_group = async (req, res, next) => {
     });
 };
 
-exports.update_group = async (req, res, next) => {
+exports.getGroupById = async (req, res, next) => {
+	const id = req.params.groupId;
 
+	await group.findById(id)
+		.exec()
+    .then(result => {
+			if (result) {
+				res.status(200).json(result);
+			} else {
+				res.status(404).json({ message: "No valid entry found for group ID" });
+			}
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: err
+      });
+    });
 };
 
-exports.delete_group = async (req, res, next) => {
+exports.updateGroup = async (req, res, next) => {
+	const id = req.params.groupId;
 
+	await group.findByIdAndUpdate(
+			id,
+			req.body,
+			{ new: true }
+		)
+    .exec()
+    .then(result => {
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: err
+      });
+    });
+};
+
+exports.deleteGroup = async (req, res, next) => {
+	const id = req.params.groupId;
+
+	await group.remove({ _id: id })
+    .exec()
+    .then(result => {
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: err
+      });
+    });
 };
