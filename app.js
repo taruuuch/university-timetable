@@ -5,7 +5,9 @@ const cors = require('cors');
 const morgan = require('morgan');
 const mongoose = require("mongoose");
 const config = require('./config/config');
+
 const groupRoutes = require('./routes/group');
+const userRoutes = require('./routes/user');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
@@ -34,7 +36,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/v1/groups', groupRoutes);
+app.use(`${config.urlPrefix}/groups`, groupRoutes);
+app.use(`${config.urlPrefix}/me`, userRoutes);
 
 app.use((req, res, next) => {
   const error = new Error('Not found');
