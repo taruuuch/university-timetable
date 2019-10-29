@@ -6,6 +6,9 @@ const morgan = require('morgan');
 const mongoose = require("mongoose");
 const config = require('./config/config');
 
+const swagger = require('swagger-ui-express');
+const swaggerConfig = require('./swagger.json');
+
 const groupRoutes = require('./routes/group');
 const userRoutes = require('./routes/user');
 
@@ -36,6 +39,8 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+app.use(`${config.urlPrefix}/docs`, swagger.serve, swagger.setup(swaggerConfig));
 
 app.use(`${config.urlPrefix}/groups`, groupRoutes);
 app.use(`${config.urlPrefix}/me`, userRoutes);
