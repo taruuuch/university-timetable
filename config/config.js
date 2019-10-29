@@ -13,7 +13,7 @@ const databaseHost = 'localhost';
 const databasePort = 27017;
 const mongo = `mongodb://${databaseHost}:${databasePort}/${databaseName}`;
 
-const urlPrefix = '/api/v1/';
+const urlPrefix = '/api/v1';
 
 module.exports = {
 	port,
