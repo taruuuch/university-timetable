@@ -1,0 +1,246 @@
+{
+	"openapi": "3.0.2",
+	"info": {
+		"title": "NULES Schedule",
+		"version": "v1"
+	},
+	"servers": [
+			{ "url": "http://localhost:8080/api/v1" }
+	],
+	"tags": [
+		{ "name": "Auth" },
+		{ "name": "Users" },
+		{ "name": "Groups" },
+		{ "name": "Teachers" },
+		{ "name": "Schedules" }
+	],
+	"paths": {
+		"/groups": {
+			"get": {
+				"tags": ["Groups"],
+				"responses": {
+					"200": {
+						"description": "A list of groups",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/Group"
+									}
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			},
+			"post": {
+				"tags": ["Groups"],
+				"responses": {
+					"200": {
+						"description": "Add group",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/AddGroup"
+									}
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			}
+		},
+		"/groups/{groupId}": {
+			"get": {
+				"tags": ["Groups"],
+				"parameters": [
+					{
+						"name": "groupId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A list of groups",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Group"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			},
+			"put": {
+				"tags": ["Groups"],
+				"parameters": [
+					{
+						"name": "groupId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "default",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/UpdateGroup"
+									}
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			},
+			"delete": {
+				"tags": ["Groups"],
+				"parameters": [
+					{
+						"name": "groupId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"responses": {
+					"200": { "description": "default" }
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			}
+		}
+	},
+	"components": {
+		"securitySchemes": {
+			"oauth2": {
+				"type": "apiKey",
+				"description": "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
+				"name": "Authorization",
+				"in": "header"
+			}
+		},
+		"schemas": {
+			"User": {
+				"type": "object",
+				"required": [
+					"username",
+					"email",
+					"password",
+					"status"
+				],
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"name": {
+						"type": "object",
+						"properties": {
+							"firstName": {
+								"type": "string"
+							},
+							"lastName": {
+								"type": "string"
+							}
+						}
+					},
+					"status": {
+						"type": "number",
+						"default": "1"
+					}
+				}
+			},
+			"Group": {
+				"type": "object",
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"studentCount": {
+						"type": "integer"
+					},
+					"isActive": {
+						"type": "boolean",
+						"default": "true"
+					}
+				}
+			},
+      "AddGroup": {
+        "type": "object",
+				"required": [
+					"title",
+					"studentCount",
+					"isActive"
+				],
+				"properties": {
+					"title": {
+						"type": "string"
+					},
+					"studentCount": {
+						"type": "integer"
+					},
+					"isActive": {
+						"type": "boolean",
+						"default": "true"
+					}
+				}
+      },
+      "UpdateGroup": {
+        "type": "object",
+				"properties": {
+					"title": {
+						"type": "string"
+					},
+					"studentCount": {
+						"type": "integer"
+					},
+					"isActive": {
+						"type": "boolean",
+						"default": "true"
+					}
+				}
+      }
+		}
+	}
+}
