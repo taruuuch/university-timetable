@@ -30,7 +30,8 @@ const groupSchema = new Schema({
 		},
 		isActive: {
 			type: Boolean,
-			required: true
+			required: true,
+			default: true
 		}
 });
 
