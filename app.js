@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const config = require('./config/config');
 
 const swagger = require('swagger-ui-express');
-const swaggerConfig = require('./api');
+const swaggerConfig = require('./api/swagger.json');
 
 const groupRoutes = require('./routes/group');
 const userRoutes = require('./routes/user');

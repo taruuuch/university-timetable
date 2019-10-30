@@ -22,12 +22,12 @@ _Backend_
 * Express (web framework for create api)
 * MongoDb (database)
 * Passport (for auth users)
+* Swagger (for API)
 
 _Frontend_
 
 * Vuejs
 * Vuex
-* TypeScript
 * CSS3
 
 <!-- Test scripts
