@@ -6,11 +6,13 @@ const userSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
     username: {
 			type: String,
-			required: true
+			required: true,
+			unique: true
 		},
     email: {
 			type: String,
-			required: true
+			required: true,
+			unique: true
 		},
     password: {
 			type: String,
@@ -22,7 +24,6 @@ const userSchema = new Schema({
 		},
 		status: {
 			type: Number,
-			required: true,
 			default: 1
 		}
 });
