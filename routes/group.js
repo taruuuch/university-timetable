@@ -2,10 +2,12 @@ const express = require("express");
 const router = express.Router();
 const GroupsController = require('../controllers/group');
 
-router.get('/', GroupsController.getAllGroups);
-router.get('/:groupId', GroupsController.getGroupById);
-router.post('/', GroupsController.addGroup);
-router.put('/:groupId', GroupsController.updateGroup);
-router.delete('/:groupId', GroupsController.deleteGroup);
+const authMiddleware = require('../middleware/auth');
+
+router.get('/', authMiddleware, GroupsController.getAllGroups);
+router.post('/', authMiddleware, GroupsController.addGroup);
+router.get('/:groupId', authMiddleware, GroupsController.getGroupById);
+router.put('/:groupId', authMiddleware, GroupsController.updateGroup);
+router.delete('/:groupId', authMiddleware, GroupsController.deleteGroup);
 
 module.exports = router;

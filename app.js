@@ -2,46 +2,25 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const morgan = require('morgan');
-const mongoose = require("mongoose");
+const mongoose = require('./config/database');
 const config = require('./config/config');
 
 const swagger = require('swagger-ui-express');
 const swaggerConfig = require('./api/swagger.json');
 
+const authRoutes = require('./routes/auth');
 const groupRoutes = require('./routes/group');
 const userRoutes = require('./routes/user');
 
-app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-mongoose.connect(config.mongo, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-	useFindAndModify: false
-})
-.then(() => console.log('Server connected to MongoDB'))
-.catch(e => console.log(e));
-
-mongoose.Promise = global.Promise;
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  if (req.method === "OPTIONS") {
-    res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
-    return res.status(200).json({});
-  }
-  next();
-});
+mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use(`${config.urlPrefix}/docs`, swagger.serve, swagger.setup(swaggerConfig));
 
+app.use(`${config.urlPrefix}`, authRoutes);
 app.use(`${config.urlPrefix}/groups`, groupRoutes);
 app.use(`${config.urlPrefix}/me`, userRoutes);
 

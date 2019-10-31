@@ -15,6 +15,66 @@
 		{ "name": "Schedules" }
 	],
 	"paths": {
+		"/registration": {
+			"post": {
+				"tags": ["Auth"],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Registration"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "default",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/Registration"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/auth": {
+			"post": {
+				"tags": ["Auth"],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Login"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "def",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/Login"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
 		"/groups": {
 			"get": {
 				"tags": ["Groups"],
@@ -39,6 +99,16 @@
 			},
 			"post": {
 				"tags": ["Groups"],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AddGroup"
+							}
+						}
+					}
+				},
 				"responses": {
 					"200": {
 						"description": "Add group",
@@ -91,6 +161,16 @@
 			},
 			"put": {
 				"tags": ["Groups"],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateGroup"
+							}
+						}
+					}
+				},
 				"parameters": [
 					{
 						"name": "groupId",
@@ -185,6 +265,51 @@
 					"status": {
 						"type": "number",
 						"default": "1"
+					}
+				}
+			},
+			"Login": {
+				"type": "object",
+				"required": [
+					"email",
+					"password"
+				],
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				}
+			},
+			"Registration": {
+				"type": "object",
+				"required": [
+					"username",
+					"email",
+					"password"
+				],
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"name": {
+						"type": "object",
+						"properties": {
+							"firstName": {
+								"type": "string"
+							},
+							"lastName": {
+								"type": "string"
+							}
+						}
 					}
 				}
 			},

@@ -3,7 +3,7 @@ const Group = require('../models/group');
 
 exports.getAllGroups = async (req, res, next) => {
 	await Group.find()
-	.exec()
+		.exec()
 		.then(docs => {
 			res.status(200).json(docs)
 		})
@@ -23,12 +23,7 @@ exports.addGroup = async (req, res, next) => {
 	});
 
 	await group.save()
-    .then(result => {
-      res.status(201).json({
-        message: "Handling POST requests to /group",
-        createdProduct: result
-      });
-    })
+    .then(result => res.status(201).json(result))
     .catch(err => {
       res.status(500).json({
         error: err
@@ -72,7 +67,7 @@ exports.updateGroup = async (req, res, next) => {
 exports.deleteGroup = async (req, res, next) => {
 	const id = req.params.groupId;
 
-	await Group.remove({ _id: id })
+	await Group.deleteOne({ _id: id })
     .exec()
     .then(result => {
       res.status(200).json(result);
