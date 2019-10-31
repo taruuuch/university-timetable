@@ -11,18 +11,18 @@ Schedule for **National University of Life and Environmental Sciences of Ukraine
 
 ## **Features**
 
-_Feedback from the Chair of Computer Science:_
-> no
+_in future :)_
+> yes
 
 ## **Technologies**
 
 _Backend_
 
 * Node.js
-* Express (web framework for create api)
-* MongoDb (database)
-* Passport (for auth users)
-* Swagger (for API)
+* Express
+* MongoDb
+* JWT
+* Swagger
 
 _Frontend_
 
@@ -46,4 +46,4 @@ Have a bug or a feature request? [Please open a new issue.](https://github.com/t
 
 ## **License**
 
-https://opensource.org/licenses
+https://opensource.org/licenses/MIT
