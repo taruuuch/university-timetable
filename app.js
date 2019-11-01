@@ -8,9 +8,9 @@ const config = require('./config/config');
 const swagger = require('swagger-ui-express');
 const swaggerConfig = require('./api/swagger.json');
 
-const authRoutes = require('./routes/auth');
-const groupRoutes = require('./routes/group');
-const userRoutes = require('./routes/user');
+const authRoutes = require('./routes/authRoutes');
+const groupRoutes = require('./routes/groupRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

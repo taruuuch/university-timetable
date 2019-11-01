@@ -3,9 +3,9 @@ const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 
 const authHelper = require('../helpers/authHelper');
-const { secret } = require('../config/jwt').jwt;
+const { secret, tokens } = require('../config/jwt').jwt;
 
-const User = require('../models/user');
+const User = require('../models/userModel');
 
 exports.registrationUser = async (req, res) => {
 	var hashedPassword = bcrypt.hashSync(req.body.password, 8);
@@ -22,8 +22,8 @@ exports.registrationUser = async (req, res) => {
 			const token = authHelper.generateToken(user._id);
 			res.status(200).json({
 				auth: true,
-				user: user,
-				token: token
+				token: token,
+				expires: tokens.access.expiresIn
 			});
 		})
     .catch(err => {
@@ -52,7 +52,11 @@ exports.authUser = async (req, res) => {
 
 			const token = authHelper.generateToken(user._id);
 
-			res.status(200).json(token);
+			res.status(200).json({
+				auth: true,
+				token: token,
+				expires: tokens.access.expiresIn
+			});
 		})
 		.catch(err => res.status(500).json({
 				message: 'Auth error!',

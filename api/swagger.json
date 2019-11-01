@@ -227,7 +227,7 @@
 		"securitySchemes": {
 			"oauth2": {
 				"type": "apiKey",
-				"description": "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
+				"description": "Standard Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
 				"name": "Authorization",
 				"in": "header"
 			}

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Group = require('../models/group');
+const Group = require('../models/groupModel');
 
 exports.getAllGroups = async (req, res, next) => {
 	await Group.find()

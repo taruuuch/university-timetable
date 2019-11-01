@@ -1,7 +1,8 @@
-const mongoose = require("mongoose");
-const config = require('./config');
+require('dotenv').config();
 
-mongoose.connect(config.mongo, {
+const mongoose = require("mongoose");
+
+mongoose.connect(process.env.DB_CONNECT, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false
