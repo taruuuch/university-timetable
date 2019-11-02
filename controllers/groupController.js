@@ -51,9 +51,7 @@ exports.getGroupById = async (req, res, next) => {
 };
 
 exports.updateGroup = async (req, res, next) => {
-	const id = req.params.groupId;
-
-	await Group.findByIdAndUpdate(id, req.body, { new: true })
+	await Group.findByIdAndUpdate(req.params.groupId, req.body, { new: true })
     .then(result => {
       res.status(200).json(result);
     })
@@ -65,9 +63,7 @@ exports.updateGroup = async (req, res, next) => {
 };
 
 exports.deleteGroup = async (req, res, next) => {
-	const id = req.params.groupId;
-
-	await Group.deleteOne({ _id: id })
+	await Group.deleteOne({ _id: req.params.groupId })
     .exec()
     .then(result => {
       res.status(200).json(result);

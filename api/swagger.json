@@ -12,7 +12,8 @@
 		{ "name": "Users" },
 		{ "name": "Groups" },
 		{ "name": "Teachers" },
-		{ "name": "Schedules" }
+		{ "name": "Schedules" },
+		{ "name": "Other" }
 	],
 	"paths": {
 		"/auth/registration": {
@@ -222,8 +223,73 @@
 				]
 			}
 		},
-		"/user": {
+		"/user/me": {
 			"get": {
+				"tags": ["Users"],
+				"responses": {
+					"200": {
+						"description": "def",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/UserProfile"
+									}
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			}
+		},
+		"/user/{userId}": {
+			"get": {
+				"tags": ["Users"],
+				"responses": {
+					"200": {
+						"description": "def",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/UserProfile"
+									}
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			},
+			"put": {
+				"tags": ["Users"],
+				"responses": {
+					"200": {
+						"description": "def",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/UserProfile"
+									}
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			},
+			"patch": {
 				"tags": ["Users"],
 				"responses": {
 					"200": {
@@ -300,9 +366,6 @@
 					"email": {
 						"type": "string"
 					},
-					"password": {
-						"type": "string"
-					},
 					"name": {
 						"type": "object",
 						"properties": {
@@ -317,6 +380,53 @@
 					"status": {
 						"type": "number",
 						"default": "1"
+					}
+				}
+			},
+			"UserSetup": {
+				"type": "object",
+				"required": [
+					"username"
+				],
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"name": {
+						"type": "object",
+						"properties": {
+							"firstName": {
+								"type": "string"
+							},
+							"lastName": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			},
+			"UserUpdate": {
+				"type": "object",
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"name": {
+						"type": "object",
+						"properties": {
+							"firstName": {
+								"type": "string"
+							},
+							"lastName": {
+								"type": "string"
+							}
+						}
 					}
 				}
 			},
