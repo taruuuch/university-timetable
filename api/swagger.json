@@ -15,7 +15,7 @@
 		{ "name": "Schedules" }
 	],
 	"paths": {
-		"/registration": {
+		"/auth/registration": {
 			"post": {
 				"tags": ["Auth"],
 				"requestBody": {
@@ -45,7 +45,7 @@
 				}
 			}
 		},
-		"/auth": {
+		"/auth/login": {
 			"post": {
 				"tags": ["Auth"],
 				"requestBody": {
@@ -221,6 +221,29 @@
 					{ "oauth2": [] }
 				]
 			}
+		},
+		"/user": {
+			"get": {
+				"tags": ["Users"],
+				"responses": {
+					"200": {
+						"description": "def",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/UserProfile"
+									}
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			}
 		}
 	},
 	"components": {
@@ -241,6 +264,35 @@
 					"password",
 					"status"
 				],
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"name": {
+						"type": "object",
+						"properties": {
+							"firstName": {
+								"type": "string"
+							},
+							"lastName": {
+								"type": "string"
+							}
+						}
+					},
+					"status": {
+						"type": "number",
+						"default": "1"
+					}
+				}
+			},
+			"UserProfile": {
+				"type": "object",
 				"properties": {
 					"username": {
 						"type": "string"

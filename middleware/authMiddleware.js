@@ -14,7 +14,6 @@ module.exports = (req, res, next) => {
   jwt.verify(token, secret, (err, decoded) => {
     if (err)
       return res.status(500).send({
-				success: false,
 				auth: false,
 				message: 'Failed to authenticate token.'
 			});
