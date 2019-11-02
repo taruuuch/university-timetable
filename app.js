@@ -20,9 +20,9 @@ mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection 
 
 app.use(`${config.urlPrefix}/docs`, swagger.serve, swagger.setup(swaggerConfig));
 
-app.use(`${config.urlPrefix}`, authRoutes);
+app.use(`${config.urlPrefix}/auth`, authRoutes);
 app.use(`${config.urlPrefix}/groups`, groupRoutes);
-app.use(`${config.urlPrefix}/me`, userRoutes);
+app.use(`${config.urlPrefix}/user`, userRoutes);
 
 app.use((req, res, next) => {
   const error = new Error('Not found');
