@@ -1,15 +1,21 @@
 {
   "name": "nules-api",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "src/server.js",
   "repository": "https://github.com/taruuuch/nules-api.git",
   "author": "Artemchuk Dmytro <taruuuch@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "nodemon --inspect --ext js --watch ./"
+		"babel-node": "babel-node",
+		"start": "nodemon --exec babel-node src/server.js --ext js --watch ./src",
+		"test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.0",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
     "nodemon": "^1.19.4"
   },
   "dependencies": {
