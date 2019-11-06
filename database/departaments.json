@@ -1,0 +1,731 @@
+{
+	"Навчально-науковий інститут енергетики, автоматики і енергозбереження": {
+		"Автоматики та робототехнічних систем ім. акад. І.І.Мартиненка": {
+			"dean": "Лисенко Віталій Пилипович",
+			"building": 11,
+			"auditoriums": ["311", "325", "326", "327", "328", "329", "330", "331", "332", "332а", "141", "141а", "144"],
+			"phone": "(044) 527-82-22, (044) 527-83-82",
+			"email": "automation_chair@nubip.edu.ua"
+		},
+		"Вищої та прикладної математики": {
+			"dean": "Батечко Ніна Григорівна",
+			"building": 11,
+			"auditoriums": ["201"],
+			"phone": "(044) 527-80-91",
+			"email": "vpmath@nauu.kiev.ua"
+		},
+		"Електропостачання ім. проф. В.М. Синькова": {
+			"dean": "Макаревич Світлана Сергіївна",
+			"building": 8,
+			"auditoriums": null,
+			"phone": "(044) 527-85-80",
+			"email": "elsupply_chair@nubip.edu.ua"
+		},
+		"Електротехніки електромеханіки та електротехнологій": {
+			"dean": "Жильцов Андрій Володимирович",
+			"building": 8,
+			"auditoriums": ["1"],
+			"phone": "(044) 527-87-84",
+			"email": "zhylcov@nubip.edu.ua"
+		},
+		"Теплоенергетики": {
+			"dean": "Горобець Валерій Григорович",
+			"building": 11,
+			"auditoriums": ["301"],
+			"phone": "(044) 527-87-48",
+			"email": "term_chair@nubip.edu.ua"
+		},
+		"Фізики": {
+			"dean": "Бойко Володимир Васильович",
+			"building": 11,
+			"auditoriums": ["348", "320"],
+			"phone": "(044) 527-84-27",
+			"email": "techphis_chair@nubip.edu.ua"
+		}
+	},
+	"Навчально-науковий інститут лісового і садово-паркового господарства": {
+		"Ботаніки, дендрології та лісової селекції": {
+			"dean": "Марчук Юрій Миколайович",
+			"building": "1а",
+			"auditoriums": null,
+			"phone": "(044) 527-85-18",
+			"email": "dendrology.nubip@gmail.com"
+		},
+		"Відтворення лісів та лісових меліорацій": {
+			"dean": "Маурер Віктор Мельхіорович",
+			"building": 1,
+			"auditoriums": ["125"],
+			"phone": "(044) 527-87-47, (044) 527-64-69, (044) 527-82-37",
+			"email": "forest_crops@nubip.edu.ua"
+		},
+		"Ландшафтної архітектури та фітодизайну": {
+			"dean": "Колесніченко Олена Валеріївна",
+			"building": 1,
+			"auditoriums": null,
+			"phone": "044) 527-85-47",
+			"email": "land_art@nubip.edu.ua"
+		},
+		"Лісівництва": {
+			"dean": "Бондар Анатолій Омелянович",
+			"building": 1,
+			"auditoriums": ["91", "92", "95", "100", "106", "107", "124", "137"],
+			"phone": "(044) 527-82-82",
+			"email": "lisivnutstvo@gmail.com"
+		},
+		"Таксації лісу та лісового менеджменту": {
+			"dean": "Білоус Андрій Михайлович",
+			"building": "1а",
+			"auditoriums": null,
+			"phone": "(044) 527-65-23",
+			"email": "bilous@nubip.edu.ua"
+		},
+		"Технологій та дизайну виробів з деревини": {
+			"dean": "Пінчевська Олена Олексіївна",
+			"building": 17,
+			"auditoriums": ["101", "102", "103", "104", "106", "107", "108", "109"],
+			"phone": "(044) 527-81-67",
+			"email": "olenapinchevska@nubip.edu.ua"
+		},
+		"Лісівництва та декоративного садівництва": {
+			"dean": "Василишин Роман Дмитрович",
+			"building": 1,
+			"auditoriums": ["117"],
+			"phone": "(044) 527-85-28",
+			"email": "R.Vasylyshyn@nubip.edu.ua"
+		}
+	},
+	"Навчально-науковий інститут неперервної освіти і туризму": {
+		"Публічного управління та менеджменту інноваційної діяльності": {
+			"dean": "Витвицька Ольга Данилівна",
+			"building": 10,
+			"auditoriums": ["209", "210", "211", "212"],
+			"phone": "(044) 527-86-58",
+			"email": "innovation_chair@nubip.edu.ua"
+		},
+		"Аграрного консалтингу і туризму": {
+			"dean": "Басюк Дарія Іванівна",
+			"building": 10,
+			"auditoriums": ["213"],
+			"phone": "(044) 527-80-61",
+			"email": "agroconsalt_chair@nubip.edu.ua"
+		}
+	},
+	"Аграрного менеджменту": {
+		"Адміністративного менеджменту та зовнішньоекономічної діяльності": {
+			"dean": "Мостенська Тетяна Леонідівна",
+			"building": 10,
+			"auditoriums": ["302"],
+			"phone": "(044) 527-86-51, (044) 527-88-60",
+			"email": null
+		},
+		"Економічної теорії": {
+			"dean": "Талавиря Микола Петрович",
+			"building": 10,
+			"auditoriums": ["414"],
+			"phone": "(044) 527-87-94",
+			"email": "economy_theory@nubip.edu.ua"
+		},
+		"Маркетингу та міжнародної торгівлі": {
+			"dean": "Буряк Руслан Іванович",
+			"building": 10,
+			"auditoriums": ["401"],
+			"phone": "(044) 527-80-04",
+			"email": "market_chair@nubip.edu.ua"
+		},
+		"Менеджменту ім. професора Й.С. Завадського": {
+			"dean": "Резнік Надія Петрівна",
+			"building": 10,
+			"auditoriums": ["314", "315", "317", "318"],
+			"phone": "(044) 527-85-66",
+			"email": null
+		},
+		"Виробничого та інвестиційного менеджменту": {
+			"dean": "Шинкарук Лідія Василівна",
+			"building": 10,
+			"auditoriums": ["410", "413"],
+			"phone": "(044) 527-80-81, (044) 527-80-80",
+			"email": "prodinvestman@nubip.edu.ua"
+		}
+	},
+	"Агробіологічний": {
+		"Агрохімії та якості продукції рослинництва ім. О.І. Душечкіна": {
+			"dean": "Бикін Анатолій Вікторович",
+			"building": 2,
+			"auditoriums": ["8", "30", "32"],
+			"phone": "(044) 527-87-63",
+			"email": "agrochemistry_nules@ukr.net"
+		},
+		"Аналітичної і біонеорганічної хімії та якості води": {
+			"dean": "Копілевич Володимир Абрамович",
+			"building": 2,
+			"auditoriums": ["12", "16"],
+			"phone": "(044) 527-80-95, (044) 527-80-92",
+			"email": "analit_him_chair@nubip.edu.ua"
+		},
+		"Генетики, селекції і насінництва": {
+			"dean": "Макарчук Олександр Сергійович",
+			"building": 4,
+			"auditoriums": ["55"],
+			"phone": "(044) 527-83-26",
+			"email": "breedingdepartment@gmail.com"
+		},
+		"Ґрунтознавства та охорони ґрунтів": {
+			"dean": "Балаєв Анатолій Джалілович",
+			"building": 2,
+			"auditoriums": null,
+			"phone": "(044) 527-81-02, (044) 527-86-31, (044) 527-83-92 ",
+			"email": "bal_grunt@ukr.net"
+		},
+		"Загальної, органічної та фізичної хімії": {
+			"dean": "Ковшун Лідія Олександрівна",
+			"building": 4,
+			"auditoriums": ["46", "50"],
+			"phone": "(044) 527-88-45",
+			"email": "nesterova.nubip@gmail.com"
+		},
+		"Землеробства та гербології": {
+			"dean": "Танчик Семен Петрович",
+			"building": 7,
+			"auditoriums": ["36"],
+			"phone": "(044) 527-82-14",
+			"email": "tanchykSP@i.ua"
+		},
+		"Кормовиробництва, меліорації і метеорології": {
+			"dean": "Демидась Григорій Ілліч",
+			"building": 4,
+			"auditoriums": ["60", "63"],
+			"phone": "(044) 527-85-15",
+			"email": "forage_chair@nubip.edu.ua"
+		},
+		"Овочівництва і закритого грунту": {
+			"dean": "Федосій Іван Олексійович",
+			"building": 4,
+			"auditoriums": ["32", "33", "34", "38а"],
+			"phone": "(044) 527-81-69, (044) 527-80-67",
+			"email": "ovochi.z@i.ua"
+		},
+		"Органічної, фізичної і колоїдної хімії та хімії пестицидів": {
+			"dean": null,
+			"building": null,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Рослинництва": {
+			"dean": "Каленська Світлана Михайлівна",
+			"building": 7,
+			"auditoriums": ["8б"],
+			"phone": "(044) 527-85-08, (044) 527-86-26",
+			"email": "dep.plant@gmail.com"
+		},
+		"Садівництва ім. проф. В.Л. Симиренка": {
+			"dean": "Мазур Борис Миколайович",
+			"building": 7,
+			"auditoriums": ["40", "43", "44", "44а", "46", "48", "50"],
+			"phone": "(044) 527-85-59",
+			"email": "hortdep@gmail.com"
+		},
+		"Технології зберігання, переробки та стандартизації продукції рослинництва ім. проф. Б.В. Лесика": {
+			"dean": "Подпрятов Григорій Іванович",
+			"building": 4,
+			"auditoriums": ["78"],
+			"phone": "(044) 527-86-76, (044) 527-81-93",
+			"email": "ave_tech_chair@nauu.kiev.ua"
+		}
+	},
+	"Ветеринарної медицини": {
+		"Анатомії тварин ім. акад. В. Касьяненка": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Паталогічної анатомії": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Акушерства, гінекології та біотехнології відтворення тварин": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Фармакології та токсикології": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Терапії і клінічної діагностики": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Ветсанекспертизи": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Гігєни та санітарії ім. А.К. Скороходька": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Хірургії ім. акад. І.О. Поваженка": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Епізоотології та організації вет. справи": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Паразитології та тропічної ветеринарії": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Фізіології, патофізіології та імунології тварин": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Мікробіології, вірусології та біотехнології": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Гістології, щитології та ембріології": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Біохімії тварин та якості і безпеки с. г.": {
+			"dean": null,
+			"building": 12,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		}
+	},
+	"Гуманітарно-педагогічний": {
+		"Педагогіки": {
+			"dean": null,
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Соціальної роботи та інформаціїних технологій в освіті": {
+			"dean": null,
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Методики навчання та управління навчальними закладами": {
+			"dean": null,
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Романо-германських мов і перекладу": {
+			"dean": null,
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Іноземної філології і перекладу": {
+			"dean": null,
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Міжнародних відносин і суспільних наук": {
+			"dean": null,
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Психології": {
+			"dean": null,
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Журналістики та мовної комунікації": {
+			"dean": null,
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Фізичного виховання": {
+			"dean": "Костенко Микола Петрович",
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Англійської мови для технічних і агробіологічних спеціальностей": {
+			"dean": null,
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Англійської філології": {
+			"dean": null,
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Культурології": {
+			"dean": null,
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Філософії": {
+			"dean": null,
+			"building": 3,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		}
+	},
+	"Економічний": {
+		"Економіки підприємства ім. проф. І.Н. Романенка": {
+			"dean": "Рогач Світлана Михайлівна",
+			"building": 10,
+			"auditoriums": ["505"],
+			"phone": "(044) 527-81-01, (044) 527-85-75",
+			"email": "economy@nubip.edu.ua"
+		},
+		"Організації підприємництва та біржової діяльності": {
+			"dean": "Ільчук Микола Максимович",
+			"building": 10,
+			"auditoriums": ["415", "416", "417", "418"],
+			"phone": "(044) 527-85-70, (044) 527-86-60",
+			"email": "organizing_chair@nubip.edu.ua"
+		},
+		"Економіки праці та соціального розвитку": {
+			"dean": "Єрмаков Олександр Юхимович",
+			"building": 10,
+			"auditoriums": ["403", "404", "405", "406", "408a"],
+			"phone": "(044) 527-82-69",
+			"email": "agrosociology_chair@nubip.edu.ua"
+		},
+		"Глобальної економіки": {
+			"dean": "Вдовенко Наталія Михайлівна",
+			"building": 10,
+			"auditoriums": ["306", "308"],
+			"phone": "(044) 527-86-48",
+			"email": "globeco@nubip.edu.ua"
+		},
+		"Обліку та оподаткування": {
+			"dean": "Калюга Євгенія Василівна",
+			"building": 10,
+			"auditoriums": ["618"],
+			"phone": "(044) 527-80-06",
+			"email": "book-keep_chair@nubip.edu.ua"
+		},
+		"Статистики та економічного аналізу": {
+			"dean": "Лазаришина Інна Дмитрівна",
+			"building": 10,
+			"auditoriums": ["602", "603", "604", "605", "606"],
+			"phone": "(044) 527-82-36",
+			"email": "statistics_chair@nubip.edu.ua"
+		},
+		"Фінансів": {
+			"dean": "Давиденко Надія Миколаївна",
+			"building": 10,
+			"auditoriums": ["501"],
+			"phone": "(044) 527-88-90",
+			"email": "finances_chair@nubip.edu.ua"
+		},
+		"Банківської справи та страхування": {
+			"dean": "Худолій Любов Михайлівна",
+			"building": 10,
+			"auditoriums": ["625"],
+			"phone": "(044) 527-88-90",
+			"email": "banking_chair@nubip.edu.ua"
+		},
+		"Біржової діяльності і торгівлі": {
+			"dean": null,
+			"building": 10,
+			"auditoriums": ["507", "508", "509"],
+			"phone": "(044) 527-81-32",
+			"email": "exchange@nubip.edu.ua"
+		},
+		"Вищої математики ім. акад. М.П. Кравчука": {
+			"dean": "Іванова Юлія Ігорівна",
+			"building": 10,
+			"auditoriums": ["108"],
+			"phone": "(044) 527-87-27, (044) 527-82-29",
+			"email": "math@nubip.edu.ua"
+		}
+	},
+	"Захисту рослин, біотехнологій та екології": {
+		"Інтегрованого захисту та карантину рослин": {
+			"dean": "Бабич Анатолій Григорович",
+			"building": 4,
+			"auditoriums": ["39а"],
+			"phone": "(044) 527-88-63, (044) 527-82-12",
+			"email": null
+		},
+		"Екобіотехнології та біорізноманіття": {
+			"dean": "Патика Микола Володимирович",
+			"building": 4,
+			"auditoriums": ["35", "36", "38б", "59", "76"],
+			"phone": "(044) 527-85-17",
+			"email": "npatyka@gmail.com"
+		},
+		"Екології агросфери та екологічного контролю": {
+			"dean": "Чайка Володимир Миколайович",
+			"building": 4,
+			"auditoriums": ["72"],
+			"phone": "(044) 527-81-95",
+			"email": "v_chayka@mail.ru"
+		},
+		"Ентомології ім. проф. М.П. Дядечка": {
+			"dean": "Лікар Ярослав Олексійович",
+			"building": 4,
+			"auditoriums": ["23"],
+			"phone": "(044) 527-85-14",
+			"email": "entomologia@ukr.net"
+		},
+		"Загальної екології та безпеки життєдіяльності": {
+			"dean": "Боголюбов Володимир Миколайович",
+			"building": 4,
+			"auditoriums": ["67а"],
+			"phone": "(044) 527-87-65",
+			"email": "general_ecology@ukr.net"
+		},
+		"Молекулярної біології, мікробіології та біобезпеки": {
+			"dean": "Стародуб Микола Федорович",
+			"building": 4,
+			"auditoriums": ["14", "16", "17", "18", "58", "75", "77"],
+			"phone": "(044) 527-88-32",
+			"email": "mol_biosafety_chair@nubip.edu.ua"
+		},
+		"Радіобіології та радіоекології": {
+			"dean": "Клепко Алла Володимирівна",
+			"building": "12а",
+			"auditoriums": ["217", "400", "402", "404", "407", "415", "416"],
+			"phone": "(044) 527-89-26, (044) 527-86-46",
+			"email": null
+		},
+		"Фізіології, біохімії рослин та біоенергетики": {
+			"dean": "Бойко Ольга Анатоліївна",
+			"building": 4,
+			"auditoriums": null,
+			"phone": "(044) 527-89-66",
+			"email": "plantphysio_chair@nubip.edu.ua"
+		},
+		"Фітопатології ім. акад. В.Ф. Пересипкіна": {
+			"dean": "Гентош Дмитро Тарасович",
+			"building": 4,
+			"auditoriums": ["45"],
+			"phone": "(044) 527-87-61 ",
+			"email": "dgentosh@ukr.net"
+		}
+	},
+	"Землевпорядкування": {},
+	"Інформаційних технологій": {
+		"Економічної кібернетики": {
+			"dean": "Скрипник Андрій Васильович",
+			"building": 15,
+			"auditoriums": ["221"],
+			"phone": null,
+			"email": "ciber_chair@nubip.edu.ua"
+		},
+		"Інформаційних і дистанційних технологій": {
+			"dean": "Кузьмінська Олена Геронтіївна",
+			"building": 15,
+			"auditoriums": ["212"],
+			"phone": "(044) 527-87-32",
+			"email": "idt_chair@nubip.edu.ua"
+		},
+		"Інформаційних систем": {
+			"dean": "Швиденко Михайло Зіновійович",
+			"building": 15,
+			"auditoriums": ["234", "205"],
+			"phone": "(044) 527-87-24",
+			"email": "shvid@ukr.net"
+		},
+		"Комп'ютерних систем і мереж": {
+			"dean": "Лахно Валерій Анатолійович",
+			"building": 15,
+			"auditoriums": ["206", "207", "211", "223"],
+			"phone": "(044) 527-81-99",
+			"email": "csn@it.nubip.edu.ua"
+		},
+		"Комп’ютерних наук": {
+			"dean": "Голуб Белла Львівна",
+			"building": 15,
+			"auditoriums": ["236", "237"],
+			"phone": "(044) 527-87-23",
+			"email": "iusprog@nubip.edu.ua"
+		}
+	},
+	"Конструювання та дизайну": {
+		"Нарисної геометрії, комп’ютерної графіки та дизайну": {
+			"dean": "Пилипака Сергій Федорович",
+			"building": 11,
+			"auditoriums": ["218"],
+			"phone": "(044) 527-82-26",
+			"email": "s.pylypaka@nubip.edu.ua"
+		},
+		"Механіки": {
+			"dean": "Березовий Микола Георгійович",
+			"building": 11,
+			"auditoriums": null,
+			"phone": "(044) 527-82-63, (044) 527-85-30",
+			"email": "mechanics_chair@nubip.edu.ua"
+		},
+		"Технології конструкційних матеріалів і матеріалознавства": {
+			"dean": "Афтанділянц Євгеній Григорович",
+			"building": 11,
+			"auditoriums": null,
+			"phone": "(044) 527- 85-74 ",
+			"email": "tkm227nubip@hotmail.com"
+		},
+		"Конструювання машин і обладнання": {
+			"dean": "Ловейкін Вячеслав Сергійович",
+			"building": 11,
+			"auditoriums": null,
+			"phone": "(044) 527-87-34",
+			"email": "lovvs@ukr.net"
+		},
+		"Надійності техніки": {
+			"dean": "Новицький Андрій Валентинович",
+			"building": 5,
+			"auditoriums": null,
+			"phone": "(044) 527-87-71",
+			"email": "novitskyyav@nubip.edu.ua"
+		},
+		"Будівництва": {
+			"dean": "Бакулін Євгеній Анатолійович",
+			"building": 7,
+			"auditoriums": null,
+			"phone": null,
+			"email": "construction_chair@nubip.edu.ua"
+		}
+	},
+	"Механіко-технологічний факультет": {
+		"Механізації тваринництва": {
+			"dean": "Хмельовський Василь Степанович",
+			"building": 11,
+			"auditoriums": ["221"],
+			"phone": "(044) 527-85-35",
+			"email": "kaf_mt@ukr.net"
+		},
+		"Охорони праці та інженерії середовища": {
+			"dean": "Войналович Олександр Володимирович",
+			"building": 11,
+			"auditoriums": ["343"],
+			"phone": "(044) 527-82-99",
+			"email": null
+		},
+		"Сільськогосподарських машин та системотехніки ім. акад. П.М. Василенка": {
+			"dean": "Гуменюк Юрій Олегович",
+			"building": 11,
+			"auditoriums": null,
+			"phone": "(044) 527-85-37",
+			"email": "sgms@ukr.net"
+		},
+		"Технічного сервісу та інженерного менеджменту ім. М.П. Момотенка": {
+			"dean": "Войтюк Валерій Дмитрович",
+			"building": 11,
+			"auditoriums": ["346"],
+			"phone": "(044) 527-88-53",
+			"email": "techserv_chair@twin.nauu.kiev.ua"
+		},
+		"Тракторів, автомобілів та біоенергосистем": {
+			"dean": "Голуб Геннадій Анатолійович",
+			"building": 11,
+			"auditoriums": ["339", "341"],
+			"phone": "(044) 527-88-95",
+			"email": "tractor_chair@nubip.edu.ua"
+		},
+		"Транспортних технологій та засобів у АПК": {
+			"dean": "Овчар Петро Андрійович",
+			"building": 11,
+			"auditoriums": ["309", "314"],
+			"phone": "(044) 527-86-32",
+			"email": "kaf_tt@ukr.net"
+		}
+	},
+	"Тваринництва та водних біоресурсів": {},
+	"Харчових технологій та управління якістю продукції АПК": {},
+	"Юридичний": {
+		"Теорії та історії держави і права": {
+			"dean": null,
+			"building": null,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Аграрного, земельного та екологічного права ім. В.З. Янчука": {
+			"dean": null,
+			"building": null,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Адміністративного та фінансового права": {
+			"dean": null,
+			"building": null,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Цивільного та господарського права": {
+			"dean": null,
+			"building": null,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		},
+		"Міжнародного права та порівняльного правознавства": {
+			"dean": null,
+			"building": null,
+			"auditoriums": null,
+			"phone": null,
+			"email": null
+		}
+	}
+}
