@@ -23,7 +23,7 @@ exports.registrationUser = async (req, res) => {
 			res.status(200).json({
 				auth: true,
 				token: token,
-				expires: tokens.access.expiresIn
+				expires: process.env.ACCESS_EXPIRES
 			});
 		})
     .catch(err => {
@@ -55,7 +55,7 @@ exports.authUser = async (req, res) => {
 			res.status(200).json({
 				auth: true,
 				token: token,
-				expires: tokens.access.expiresIn
+				expires: process.env.ACCESS_EXPIRES
 			});
 		})
 		.catch(err => res.status(500).json({

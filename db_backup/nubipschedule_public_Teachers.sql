@@ -1,3 +1,0 @@
-INSERT INTO public."Teachers" ("TeacherId", "Name", "LastName", "Middlename", "IsActive", "DepartamentId", "Email", "Site", "DegreeId", "AcademicId") VALUES (1, 'Олексій', 'Ткаченко', 'Миколайович', true, 1, null, null, 3, 1);
-INSERT INTO public."Teachers" ("TeacherId", "Name", "LastName", "Middlename", "IsActive", "DepartamentId", "Email", "Site", "DegreeId", "AcademicId") VALUES (2, 'Ірина', 'Ясенова', 'Сергіївна', true, 1, 'yasenova@it.nubip.edu.ua', null, 3, 1);
-INSERT INTO public."Teachers" ("TeacherId", "Name", "LastName", "Middlename", "IsActive", "DepartamentId", "Email", "Site", "DegreeId", "AcademicId") VALUES (3, 'Белла', 'Голуб', 'Львівна', true, 1, null, null, 3, 1);

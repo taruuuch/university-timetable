@@ -1,3 +1,0 @@
-INSERT INTO public."Lessons" ("LessonId", "CurriculumId", "GroupId", "TeacherId", "AuditoriumId", "TimeId", "Day", "Week", "SubGroup") VALUES (4, 1, 4, 2, 3, 5, '2', 0, 0);
-INSERT INTO public."Lessons" ("LessonId", "CurriculumId", "GroupId", "TeacherId", "AuditoriumId", "TimeId", "Day", "Week", "SubGroup") VALUES (3, 1, 4, 3, 3, 4, '2', 0, 0);
-INSERT INTO public."Lessons" ("LessonId", "CurriculumId", "GroupId", "TeacherId", "AuditoriumId", "TimeId", "Day", "Week", "SubGroup") VALUES (5, 1, 4, 3, 3, 1, '5', 0, 0);

@@ -1,1 +1,0 @@
-INSERT INTO public."Curriculums" ("CurriculumId", "DepartamentId", "SubjectId", "LectionCount", "LabaratorCount", "Semester", "SpecialityId") VALUES (1, 1, 5, 15, 15, 1, 1);
