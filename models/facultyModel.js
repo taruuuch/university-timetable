@@ -5,6 +5,9 @@ let Schema = mongoose.Schema;
 const FacultySchema = new Schema({
 	_id: Schema.Types.ObjectId,
 	title: String,
+	facultyTypeId: [{
+		type: Schema.Types.ObjectId, ref: 'FacultyType'
+	}],
 	dean: String,
 	buildingId: [{
 		type: Schema.Types.ObjectId, ref: 'Building'
