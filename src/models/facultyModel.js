@@ -13,7 +13,9 @@ const schema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'FacultyType'
 	}],
-	dean: String,
+	dean: {
+		type: String
+	},
 	buildingId: [{
 		type: Schema.Types.ObjectId,
 		ref: 'Building'

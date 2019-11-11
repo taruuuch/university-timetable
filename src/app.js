@@ -3,8 +3,9 @@ import bodyParser from  'body-parser';
 import cors from  'cors';
 import mongoose from './config/database';
 import config from './config/config';
+import route from './config/routes';
 import swagger from 'swagger-ui-express';
-import swaggerConfig from './api/swagger.json';
+import swaggerConfig from './api/swagger.v1.json';
 import authRoutes from './routes/authRoutes';
 import groupRoutes from './routes/groupRoutes';
 import userRoutes from './routes/userRoutes';
@@ -17,23 +18,27 @@ app.use(cors());
 
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-app.use(`${config.urlPrefix}/docs`, swagger.serve, swagger.setup(swaggerConfig));
-app.use(`${config.urlPrefix}/auth`, authRoutes);
-app.use(`${config.urlPrefix}/groups`, groupRoutes);
-app.use(`${config.urlPrefix}/user`, userRoutes);
+app.use(route.swaggerUri, swagger.serve, swagger.setup(swaggerConfig));
+app.use(route.authUri, authRoutes);
+app.use(route.groupUri, groupRoutes);
+app.use(route.userUri, userRoutes);
 
-app.use((req, res, next) => {
-  const error = new Error('Not found');
-  error.status = 404;
-  next(error);
+app.use(async (req, res, next) => {
+  const error = new Error('Api link not found! Go to localhost:8080/api/v1/docs for check available links');
+	error.status = 404;
+	error.path = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
+
+  await next(error);
 });
 
 app.use((error, req, res, next) => {
   res.status(error.status || 500);
   res.json({
     error: {
-      message: error.message
-    }
+			message: error.message,
+			code: error.status,
+			path: error.path
+		}
   });
 });
 

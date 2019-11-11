@@ -16,6 +16,17 @@ const schema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'Faculty'
 	}],
+	building: [{
+		type: Schema.Types.ObjectId,
+		ref: 'Building'
+	}],
+	auditoriums: [{
+		type: Schema.Types.ObjectId,
+		ref: 'Auditorium'
+	}],
+	phone: {
+		type: String
+	},
 	email: {
 		type: String
 	}

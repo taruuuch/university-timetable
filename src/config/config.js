@@ -1,5 +1,5 @@
-const urlPrefix = '/api/v1';
+const uriPrefix = '/api/v1';
 
 export default {
-	urlPrefix
+	uriPrefix
 };
