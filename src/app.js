@@ -2,10 +2,10 @@ import express from 'express';
 import bodyParser from  'body-parser';
 import cors from  'cors';
 import mongoose from './config/database';
-import config from './config/config';
 import route from './config/routes';
 import swagger from 'swagger-ui-express';
 import swaggerConfig from './api/swagger.v1.json';
+import setupRoutes from './routes/setupRouter';
 import authRoutes from './routes/authRoutes';
 import groupRoutes from './routes/groupRoutes';
 import userRoutes from './routes/userRoutes';
@@ -22,6 +22,7 @@ app.use(route.swaggerUri, swagger.serve, swagger.setup(swaggerConfig));
 app.use(route.authUri, authRoutes);
 app.use(route.groupUri, groupRoutes);
 app.use(route.userUri, userRoutes);
+app.use(route.setupUri, setupRoutes);
 
 app.use(async (req, res, next) => {
   const error = new Error('Api link not found! Go to localhost:8080/api/v1/docs for check available links');

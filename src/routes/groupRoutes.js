@@ -4,9 +4,10 @@ import authMiddleware from '../middleware/authMiddleware';
 
 const router = express.Router();
 
-router.get('/', authMiddleware, groupsController.getAllGroups);
+router.get('/', groupsController.getAllGroups);
+router.get('/:groupId', groupsController.getGroupById);
+
 router.post('/', authMiddleware, groupsController.addGroup);
-router.get('/:groupId', authMiddleware, groupsController.getGroupById);
 router.put('/:groupId', authMiddleware, groupsController.updateGroup);
 router.delete('/:groupId', authMiddleware, groupsController.deleteGroup);
 
