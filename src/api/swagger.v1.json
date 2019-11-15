@@ -289,7 +289,7 @@
 					{ "oauth2": [] }
 				]
 			},
-			"patch": {
+			"post": {
 				"tags": ["Users"],
 				"responses": {
 					"200": {

@@ -5,5 +5,5 @@ const port = process.env.PORT;
 
 app.listen(port, () => {
 	console.clear();
-	console.log(`Server start on port ${port}`)
+	console.log(`Server start on port ${port}`);
 });
