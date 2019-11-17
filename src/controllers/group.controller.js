@@ -5,13 +5,11 @@ export default {
 	getAllGroups: async (req, res, next) => {
 		await groupModel.find()
 			.exec()
-			.then(docs => {
-				res.status(200).json(docs)
+			.then(groups => {
+				res.status(200).json(groups)
 			})
 			.catch(err => {
-				res.status(500).json({
-					error: err
-				});
+				res.status(500).json({ error: err });
 			});
 	},
 	addGroup: async (req, res, next) => {

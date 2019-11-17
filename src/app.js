@@ -8,6 +8,7 @@ import database from './utils/database.util';
 import authRoutes from './routes/auth.routes';
 import groupRoutes from './routes/group.routes';
 import userRoutes from './routes/user.routes';
+import connectLogger from './config/logger.config';
 
 const app = express();
 
@@ -16,6 +17,7 @@ database.connect();
 app.use(bodyParser.json())
 		.use(bodyParser.urlencoded({ extended: true }))
 		.use(cors())
+		.use(connectLogger)
 		.use(routesConfig.swaggerUri, swagger.serve, swagger.setup(swaggerConfig))
 		.use(routesConfig.authUri, authRoutes)
 		.use(routesConfig.groupUri, groupRoutes)

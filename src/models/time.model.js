@@ -4,7 +4,7 @@ import uuid from 'uuid/v4';
 const { Schema } = mongoose;
 
 const schema = new Schema({
-	_id: {
+	id: {
 		type: String,
 		default: uuid()
 	},
