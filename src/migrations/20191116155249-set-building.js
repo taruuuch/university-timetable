@@ -15,21 +15,21 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-	const time = require('../database/times');
+  const building = require('../database/buildings');
 	const uuid = require('uuid/v4');
 
-	let times = [];
+	let buildings = [];
 
-	Object.keys(time).forEach((i) => {
-		times.push({
+	Object.keys(building).forEach((i) => {
+		buildings.push({
 			id: uuid(),
 			number: i,
-			start: time[i].start,
-			end: time[i].end
+			latitude: building[i].latitude,
+			longitude: building[i].longitude
 		});
 	});
 
-	db.insert('time', times, (error) => {
+	db.insert('building', buildings, (error) => {
 		if (error) console.log(error);
 	});
 };
