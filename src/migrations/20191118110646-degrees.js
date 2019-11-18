@@ -14,29 +14,28 @@ exports.setup = function(options, seedLink) {
   seed = seedLink;
 };
 
-exports.up = function(db) {
-	const time = require('../database/times');
-	const uuid = require('uuid/v4');
+exports.up = function(db, next) {
+	const Degree = require('../models/degree.model');
+  const degreeJson = require('../database/degrees');
 
-	let times = [];
+	let degrees = [];
 
-	Object.keys(time).forEach((i) => {
-		times.push({
-			id: uuid(),
-			number: i,
-			start: time[i].start,
-			end: time[i].end
-		});
+	degreeJson.forEach((item) => {
+		degrees.push(
+			new Degree({
+				title: item
+			})
+		);
 	});
 
-	db.insert('time', times, (error) => {
+	db.insert('degree', degrees, (error) => {
 		if (error) console.log(error);
 	});
+
+	next();
 };
 
-exports.down = function(db) {
-  return null;
-};
+exports.down = function(db, next) {};
 
 exports._meta = {
   "version": 1

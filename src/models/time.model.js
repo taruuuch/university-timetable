@@ -1,12 +1,14 @@
-import mongoose from 'mongoose';
-import uuid from 'uuid/v4';
+const mongoose = require('mongoose');
+const uuid = require('uuid/v4');
 
-const { Schema } = mongoose;
+const {
+	Schema
+} = mongoose;
 
 const schema = new Schema({
-	id: {
+	_id: {
 		type: String,
-		default: uuid()
+		default: uuid
 	},
 	number: {
 		type: Number
@@ -17,6 +19,8 @@ const schema = new Schema({
 	end: {
 		type: String
 	}
-}, { versionKey: false });
+}, {
+	versionKey: false
+});
 
-export default mongoose.model('time', schema);
+module.exports = mongoose.model('time', schema, 'time');

@@ -1,38 +1,40 @@
-import mongoose from 'mongoose';
-import uuid from 'uuid/v4';
+const mongoose = require('mongoose');
+const uuid = require('uuid/v4');
 
-const { Schema } = mongoose;
+const {
+	Schema
+} = mongoose;
 
 const schema = new Schema({
 	_id: {
 		type: String,
-		default: uuid()
+		default: uuid
 	},
 	title: {
 		type: String,
 		required: true
 	},
 	specialityId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'speciality',
 		required: true
 	}],
 	teacherId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'teacher',
 		required: true
 	}],
 	educationLevelId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'educationLevel',
 		required: true
 	}],
 	educationFormId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'educationForm',
 		required: true
 	}],
-	studentCount:  {
+	studentCount: {
 		type: Number,
 		required: true
 	},
@@ -41,6 +43,8 @@ const schema = new Schema({
 		required: true,
 		default: true
 	}
+}, {
+	versionKey: false
 });
 
-export default mongoose.model('group', schema);
+module.exports = mongoose.model('group', schema, 'group');

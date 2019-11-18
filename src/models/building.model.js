@@ -1,10 +1,14 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+const uuid = require('uuid/v4');
 
-const { Schema } = mongoose;
+const {
+	Schema
+} = mongoose;
 
 const schema = new Schema({
 	_id: {
-		type: Schema.Types.ObjectId
+		type: String,
+		default: uuid
 	},
 	number: {
 		type: Number
@@ -15,6 +19,8 @@ const schema = new Schema({
 	longitude: {
 		type: String
 	}
+}, {
+	versionKey: false
 });
 
-export default mongoose.model('building', schema);
+module.exports = mongoose.model('building', schema, 'building');

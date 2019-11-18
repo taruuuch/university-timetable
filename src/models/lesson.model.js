@@ -1,29 +1,31 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+const uuid = require('uuid/v4');
 
 const { Schema } = mongoose;
 
 const schema = new Schema({
 	_id: {
-		type: Schema.Types.ObjectId
+		type: String,
+		default: uuid
 	},
 	curriculumId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'curriculum'
 	}],
 	groupId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'group'
 	}],
 	teacherId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'teacher'
 	}],
 	auditoriumId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'auditorium'
 	}],
 	timeId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'time'
 	}],
 	day: {
@@ -35,6 +37,8 @@ const schema = new Schema({
 	subGroup: {
 		type: Number
 	}
+}, {
+	versionKey: false
 });
 
-export default mongoose.model('lesson', schema);
+module.exports = mongoose.model('lesson', schema, 'lesson');

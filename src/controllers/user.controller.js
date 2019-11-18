@@ -1,8 +1,8 @@
-import userModel from '../models/user.model';
+import User from '../models/user.model';
 
 export default {
 	getUserProfile: async (req, res, next) => {
-		await userModel.findById(req.decoded.id)
+		await User.findById(req.decoded.id)
 			.exec()
 			.then(data => {
 				let user = {
@@ -23,7 +23,7 @@ export default {
 			});
 	},
 	getUserById: async (req, res, next) => {
-		await userModel.findById(req.decoded.id)
+		await User.findById(req.decoded.id)
 			.exec()
 			.then(data => {
 				let user = {
@@ -44,7 +44,7 @@ export default {
 			});
 	},
 	setupUser: async (req, res, next) => {
-		await userModel.findByIdAndUpdate(req.decoded.id, req.body, { new: true })
+		await User.findByIdAndUpdate(req.decoded.id, req.body, { new: true })
 			.then(result => {
 				res.status(200).json(result);
 			})
@@ -55,7 +55,7 @@ export default {
 			});
 	},
 	updateUser: async (req, res, next) => {
-		await userModel.findByIdAndUpdate(req.decoded.id, req.body, { new: true })
+		await User.findByIdAndUpdate(req.decoded.id, req.body, { new: true })
 			.then(result => {
 				res.status(200).json(result);
 			})
@@ -66,7 +66,7 @@ export default {
 			});
 	},
 	checkUsername: async (req, res, next) => {
-		await userModel.find({ username: req.body.username })
+		await User.find({ username: req.body.username })
 			.select('username')
 			.catch(error => {
 				return error;

@@ -1,16 +1,14 @@
 import bcrypt from 'bcryptjs';
 
 import authHelper from '../helpers/auth.helper';
-import userModel from '../models/user.model';
+import User from '../models/user.model';
 
 export default {
 	registrationUser: async (req, res) => {
 		req.body.password = bcrypt.hashSync(req.body.password, 8);
-		const user = new userModel(req.body);
+		const newUser = new User(req.body);
 
-		console.log(user);
-
-		await user.save()
+		await newUser.save()
 		.then(user => {
 			const token = authHelper.generateToken(user._id);
 			res.status(200).json({
@@ -27,7 +25,7 @@ export default {
 		});
 	},
 	authUser: async (req, res) => {
-		await userModel.findOne({ email: req.body.email })
+		await User.findOne({ email: req.body.email })
 			.exec()
 			.then(user => {
 				if (!user) {
