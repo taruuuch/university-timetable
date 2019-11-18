@@ -1,17 +1,21 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+const uuid = require('uuid/v4');
 
-const { Schema } = mongoose;
+const {
+	Schema
+} = mongoose;
 
 const schema = new Schema({
 	_id: {
-		type: Schema.Types.ObjectId
+		type: String,
+		default: uuid
 	},
 	lessonId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'lesson'
 	}],
 	timeId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'time'
 	}],
 	from: {
@@ -26,6 +30,8 @@ const schema = new Schema({
 	status: {
 		type: Boolean
 	}
+}, {
+	versionKey: false
 });
 
-export default mongoose.model('request', schema);
+module.exports = mongoose.model('request', schema, 'request');

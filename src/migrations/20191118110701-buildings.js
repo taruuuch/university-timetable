@@ -14,29 +14,30 @@ exports.setup = function(options, seedLink) {
   seed = seedLink;
 };
 
-exports.up = function(db) {
-  const building = require('../database/buildings');
-	const uuid = require('uuid/v4');
+exports.up = function(db, next) {
+	const Building = require('../models/building.model');
+  const buildingJson = require('../database/buildings');
 
 	let buildings = [];
 
-	Object.keys(building).forEach((i) => {
-		buildings.push({
-			id: uuid(),
-			number: i,
-			latitude: building[i].latitude,
-			longitude: building[i].longitude
-		});
+	Object.keys(buildingJson).forEach((i) => {
+		buildings.push(
+			new Building({
+				number: i,
+				latitude: buildingJson[i].latitude,
+				longitude: buildingJson[i].longitude
+			})
+		);
 	});
 
 	db.insert('building', buildings, (error) => {
 		if (error) console.log(error);
 	});
+
+	next();
 };
 
-exports.down = function(db) {
-  return null;
-};
+exports.down = function(db, next) {};
 
 exports._meta = {
   "version": 1

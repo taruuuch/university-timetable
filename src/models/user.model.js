@@ -1,37 +1,40 @@
-import mongoose from 'mongoose';
-import uuid from 'uuid/v4';
+const mongoose = require('mongoose');
+const uuid = require('uuid/v4');
 
-const { Schema } = mongoose;
+const {
+	Schema
+} = mongoose;
 
 const schema = new Schema({
-		_id: {
-			type: String,
-			default: uuid()
+	_id: {
+		type: String,
+		default: uuid
+	},
+	username: {
+		type: String,
+		unique: true
+	},
+	email: {
+		type: String,
+		unique: true
+	},
+	password: {
+		type: String,
+	},
+	name: {
+		firstName: {
+			type: String
 		},
-		username: {
-			type: String,
-			unique: true
-		},
-		email: {
-			type: String,
-			unique: true
-		},
-		password: {
-			type: String,
-		},
-		name: {
-			firstName: {
-				type: String
-			},
-			lastName: {
-				type: String
-			}
-		},
-		status: {
-			type: Number,
-			default: 1
+		lastName: {
+			type: String
 		}
-	}, { versionKey: false }
-);
+	},
+	status: {
+		type: Number,
+		default: 1
+	}
+}, {
+	versionKey: false
+});
 
-export default mongoose.model('user', schema);
+module.exports = mongoose.model('user', schema, 'user');

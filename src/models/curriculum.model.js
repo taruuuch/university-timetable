@@ -1,17 +1,21 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+const uuid = require('uuid/v4');
 
-const { Schema } = mongoose;
+const {
+	Schema
+} = mongoose;
 
 const schema = new Schema({
 	_id: {
-		type: Schema.Types.ObjectId
+		type: String,
+		default: uuid
 	},
 	departamentId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'Departament'
 	}],
 	subjectId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'Subject'
 	}],
 	lectionCount: {
@@ -23,6 +27,8 @@ const schema = new Schema({
 	semester: {
 		type: Number
 	},
+}, {
+	versionKey: false
 });
 
-export default mongoose.model('curriculum', schema);
+module.exports = mongoose.model('curriculum', schema, 'curriculum');

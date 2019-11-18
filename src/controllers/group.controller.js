@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
-import groupModel from '../models/group.model';
+
+import Group from '../models/group.model';
 
 export default {
 	getAllGroups: async (req, res, next) => {
-		await groupModel.find()
+		await Group.find()
 			.exec()
 			.then(groups => {
 				res.status(200).json(groups)
@@ -13,14 +14,14 @@ export default {
 			});
 	},
 	addGroup: async (req, res, next) => {
-		const group = new groupModel({
+		const newGroup = new Group({
 			_id: new mongoose.Types.ObjectId(),
 			title: req.body.title,
 			studentCount: req.body.studentCount,
 			isActive: req.body.isActive,
 		});
 
-		await group.save()
+		await newGroup.save()
 			.then(result => res.status(201).json(result))
 			.catch(err => {
 				res.status(500).json({
@@ -31,7 +32,7 @@ export default {
 	getGroupById: async (req, res, next) => {
 		const id = req.params.groupId;
 
-		await groupModel.findById(id)
+		await Group.findById(id)
 			.exec()
 			.then(result => {
 				if (result) {
@@ -47,7 +48,7 @@ export default {
 			});
 	},
 	updateGroup: async (req, res, next) => {
-		await groupModel.findByIdAndUpdate(req.params.groupId, req.body, { new: true })
+		await Group.findByIdAndUpdate(req.params.groupId, req.body, { new: true })
 			.then(result => {
 				res.status(200).json(result);
 			})
@@ -58,7 +59,7 @@ export default {
 			});
 	},
 	deleteGroup: async (req, res, next) => {
-		await groupModel.deleteOne({ _id: req.params.groupId })
+		await Group.deleteOne({ _id: req.params.groupId })
 			.exec()
 			.then(result => {
 				res.status(200).json(result);

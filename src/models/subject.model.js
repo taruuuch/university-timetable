@@ -1,18 +1,24 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+const uuid = require('uuid/v4');
 
-const { Schema } = mongoose;
+const {
+	Schema
+} = mongoose;
 
 const schema = new Schema({
 	_id: {
-		type: Schema.Types.ObjectId
+		type: String,
+		default: uuid
 	},
 	title: {
 		type: String
 	},
 	subjectTypeId: [{
-		type: Schema.Types.ObjectId,
+		type: String,
 		ref: 'subjectType'
 	}]
+}, {
+	versionKey: false
 });
 
-export default mongoose.model('subject', schema);
+module.exports = mongoose.model('subject', schema, 'subject');

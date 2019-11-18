@@ -1,10 +1,14 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+const uuid = require('uuid/v4');
 
-const { Schema } = mongoose;
+const {
+	Schema
+} = mongoose;
 
 const schema = new Schema({
 	_id: {
-		type: Schema.Types.ObjectId
+		type: String,
+		default: uuid
 	},
 	title: {
 		type: String
@@ -13,16 +17,16 @@ const schema = new Schema({
 		type: String
 	},
 	facultyId: [{
-		type: Schema.Types.ObjectId,
-		ref: 'faculty'
+		type: String,
+		ref: 'faculties'
 	}],
-	building: [{
-		type: Schema.Types.ObjectId,
-		ref: 'building'
+	buildingId: [{
+		type: String,
+		ref: 'buildings'
 	}],
-	auditoriums: [{
-		type: Schema.Types.ObjectId,
-		ref: 'auditorium'
+	auditoriumId: [{
+		type: String,
+		ref: 'auditoriums'
 	}],
 	phone: {
 		type: String
@@ -30,6 +34,8 @@ const schema = new Schema({
 	email: {
 		type: String
 	}
+}, {
+	versionKey: false
 });
 
-export default mongoose.model('departament', schema);
+module.exports = mongoose.model('departament', schema, 'departament');
