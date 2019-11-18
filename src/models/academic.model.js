@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const uuid = require('uuid/v4');
 
-const { Schema } = mongoose;
+const {
+	Schema
+} = mongoose;
 
 const schema = new Schema({
 	_id: {
