@@ -1,35 +1,35 @@
-import mongoose from 'mongoose';
-
 import Group from '../models/group.model';
 
-export default {
-	getAllGroups: async (req, res, next) => {
+class groupController {
+	getGroups = async (req, res) => {
 		await Group.find()
 			.exec()
 			.then(groups => {
 				res.status(200).json(groups)
 			})
-			.catch(err => {
-				res.status(500).json({ error: err });
+			.catch(error => {
+				res.status(500).json({ error: error })
 			});
-	},
-	addGroup: async (req, res, next) => {
+	};
+
+	createGroup = async (req, res) => {
+		const { title, studentCount, isActive } = req.body;
 		const newGroup = new Group({
-			_id: new mongoose.Types.ObjectId(),
-			title: req.body.title,
-			studentCount: req.body.studentCount,
-			isActive: req.body.isActive,
+			title: title,
+			studentCount: studentCount,
+			isActive: isActive
 		});
 
 		await newGroup.save()
-			.then(result => res.status(201).json(result))
-			.catch(err => {
-				res.status(500).json({
-					error: err
-				});
+			.then(result => {
+				res.status(201).json(result)
+			})
+			.catch(error => {
+				res.status(500).json({ error: error })
 			});
-	},
-	getGroupById: async (req, res, next) => {
+	};
+
+	getGroupById = async (req, res) => {
 		const id = req.params.groupId;
 
 		await Group.findById(id)
@@ -46,8 +46,9 @@ export default {
 					error: err
 				});
 			});
-	},
-	updateGroup: async (req, res, next) => {
+	};
+
+	updateGroup = async (req, res) => {
 		await Group.findByIdAndUpdate(req.params.groupId, req.body, { new: true })
 			.then(result => {
 				res.status(200).json(result);
@@ -57,8 +58,9 @@ export default {
 					error: err
 				});
 			});
-	},
-	deleteGroup: async (req, res, next) => {
+	};
+
+	deleteGroup = async (req, res) => {
 		await Group.deleteOne({ _id: req.params.groupId })
 			.exec()
 			.then(result => {
@@ -69,5 +71,7 @@ export default {
 					error: err
 				});
 			});
-	}
+	};
 };
+
+export default groupController;

@@ -44,7 +44,9 @@ export default {
 			});
 	},
 	setupUser: async (req, res, next) => {
-		await User.findByIdAndUpdate(req.decoded.id, req.body, { new: true })
+		await User.findByIdAndUpdate(req.decoded.id, req.body, {
+				new: true
+			})
 			.then(result => {
 				res.status(200).json(result);
 			})
@@ -55,7 +57,9 @@ export default {
 			});
 	},
 	updateUser: async (req, res, next) => {
-		await User.findByIdAndUpdate(req.decoded.id, req.body, { new: true })
+		await User.findByIdAndUpdate(req.decoded.id, req.body, {
+				new: true
+			})
 			.then(result => {
 				res.status(200).json(result);
 			})
@@ -66,11 +70,16 @@ export default {
 			});
 	},
 	checkUsername: async (req, res, next) => {
-		await User.find({ username: req.body.username })
-			.select('username')
-			.catch(error => {
-				return error;
+		await User.find({
+				username: req.body.username
+			})
+			.then(result => {
+				res.status(200).json(result);
+			})
+			.catch(err => {
+				res.status(500).json({
+					error: err
+				})
 			});
-		return true;
 	}
 };

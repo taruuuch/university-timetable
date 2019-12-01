@@ -94,9 +94,7 @@
 						}
 					}
 				},
-				"security": [
-					{ "oauth2": [] }
-				]
+				"security": []
 			},
 			"post": {
 				"tags": ["Groups"],
@@ -105,20 +103,20 @@
 					"content": {
 						"application/json": {
 							"schema": {
-								"$ref": "#/components/schemas/AddGroup"
+								"$ref": "#/components/schemas/CreateGroup"
 							}
 						}
 					}
 				},
 				"responses": {
 					"200": {
-						"description": "Add group",
+						"description": "Create group",
 						"content": {
 							"application/json": {
 								"schema": {
 									"type": "array",
 									"items": {
-										"$ref": "#/components/schemas/AddGroup"
+										"$ref": "#/components/schemas/CreateGroup"
 									}
 								}
 							}
@@ -223,7 +221,7 @@
 				]
 			}
 		},
-		"/user/me": {
+		"/users/me": {
 			"get": {
 				"tags": ["Users"],
 				"responses": {
@@ -246,7 +244,7 @@
 				]
 			}
 		},
-		"/user/{userId}": {
+		"/users/{userId}": {
 			"get": {
 				"tags": ["Users"],
 				"responses": {
@@ -301,6 +299,89 @@
 									"items": {
 										"$ref": "#/components/schemas/UserProfile"
 									}
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			}
+		},
+		"/teachers": {
+			"get": {
+				"tags": ["Teachers"],
+				"responses": {
+					"200": {
+						"description": "A list of teachers",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/Teacher"
+									}
+								}
+							}
+						}
+					}
+				},
+				"security": []
+			},
+			"post": {
+				"tags": ["Teachers"],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateTeacher"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Create teacher",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/CreateTeacher"
+									}
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			}
+		},
+		"/teachers/{teacherId}": {
+			"get": {
+				"tags": ["Teachers"],
+				"parameters": [
+					{
+						"name": "teacherId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"style": "simple"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A list of teachers",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/Teacher"
 								}
 							}
 						}
@@ -493,7 +574,7 @@
 					}
 				}
 			},
-      "AddGroup": {
+      "CreateGroup": {
         "type": "object",
 				"required": [
 					"title",
@@ -527,7 +608,136 @@
 						"default": "true"
 					}
 				}
-      }
+			},
+			"Teacher": {
+				"type": "object",
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "object",
+						"properties": {
+							"firstName": {
+								"type": "string"
+							},
+							"lastName": {
+								"type": "string"
+							},
+							"middleName": {
+								"type": "string"
+							}
+						}
+					},
+					"departamentId": {
+						"type": "string"
+					},
+					"degreeId": {
+						"type": "string"
+					},
+					"academicId": {
+						"type": "string"
+					},
+					"isActive": {
+						"type": "boolean",
+						"default": "true"
+					},
+					"email": {
+						"type": "string"
+					},
+					"site": {
+						"type": "string"
+					}
+				}
+			},
+			"CreateTeacher": {
+				"type": "object",
+				"required": [
+					"name",
+					"departamentId",
+					"degreeId",
+					"academicId"
+				],
+				"properties": {
+					"name": {
+						"type": "object",
+						"properties": {
+							"firstName": {
+								"type": "string"
+							},
+							"lastName": {
+								"type": "string"
+							},
+							"middleName": {
+								"type": "string"
+							}
+						}
+					},
+					"departamentId": {
+						"type": "string"
+					},
+					"degreeId": {
+						"type": "string"
+					},
+					"academicId": {
+						"type": "string"
+					},
+					"isActive": {
+						"type": "boolean",
+						"default": "true"
+					},
+					"email": {
+						"type": "string"
+					},
+					"site": {
+						"type": "string"
+					}
+				}
+			},
+			"UpdateTeacher": {
+				"type": "object",
+				"required": [
+					"name",
+					"departamentId",
+					"degreeId",
+					"academicId"
+				],
+				"properties": {
+					"name": {
+						"type": "object",
+						"properties": {
+							"firstName": {
+								"type": "string"
+							},
+							"lastName": {
+								"type": "string"
+							},
+							"middleName": {
+								"type": "string"
+							}
+						}
+					},
+					"departamentId": {
+						"type": "string"
+					},
+					"degreeId": {
+						"type": "string"
+					},
+					"academicId": {
+						"type": "string"
+					},
+					"isActive": {
+						"type": "boolean",
+						"default": "true"
+					},
+					"email": {
+						"type": "string"
+					},
+					"site": {
+						"type": "string"
+					}
+				}
+			}
 		}
 	}
 }
