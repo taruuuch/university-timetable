@@ -21,21 +21,21 @@ const schema = new Schema({
 			type: String
 		},
 	},
-	departamentId: [{
+	departamentId: {
 		type: String,
 		ref: 'departament',
 		required: true
-	}],
-	degreeId: [{
+	},
+	degreeId: {
 		type: String,
 		ref: 'degree',
 		required: true
-	}],
-	academicId: [{
+	},
+	academicId: {
 		type: String,
 		ref: 'academic',
 		required: true
-	}],
+	},
 	isActive: {
 		type: Boolean,
 		required: true,

@@ -230,10 +230,55 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"type": "array",
-									"items": {
-										"$ref": "#/components/schemas/UserProfile"
-									}
+									"$ref": "#/components/schemas/UserProfile"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			}
+		},
+		"/users": {
+			"patch": {
+				"tags": ["Users"],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserSetup"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "def",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserProfile"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			},
+			"post": {
+				"tags": ["Users"],
+				"responses": {
+					"200": {
+						"description": "def",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserProfile"
 								}
 							}
 						}
@@ -253,52 +298,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"type": "array",
-									"items": {
-										"$ref": "#/components/schemas/UserProfile"
-									}
-								}
-							}
-						}
-					}
-				},
-				"security": [
-					{ "oauth2": [] }
-				]
-			},
-			"put": {
-				"tags": ["Users"],
-				"responses": {
-					"200": {
-						"description": "def",
-						"content": {
-							"application/json": {
-								"schema": {
-									"type": "array",
-									"items": {
-										"$ref": "#/components/schemas/UserProfile"
-									}
-								}
-							}
-						}
-					}
-				},
-				"security": [
-					{ "oauth2": [] }
-				]
-			},
-			"post": {
-				"tags": ["Users"],
-				"responses": {
-					"200": {
-						"description": "def",
-						"content": {
-							"application/json": {
-								"schema": {
-									"type": "array",
-									"items": {
-										"$ref": "#/components/schemas/UserProfile"
-									}
+									"$ref": "#/components/schemas/UserProfile"
 								}
 							}
 						}
@@ -420,10 +420,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"type": "array",
-									"items": {
-										"$ref": "#/components/schemas/UpdateTeacher"
-									}
+									"$ref": "#/components/schemas/UpdateTeacher"
 								}
 							}
 						}
@@ -534,17 +531,6 @@
 				"properties": {
 					"username": {
 						"type": "string"
-					},
-					"name": {
-						"type": "object",
-						"properties": {
-							"firstName": {
-								"type": "string"
-							},
-							"lastName": {
-								"type": "string"
-							}
-						}
 					}
 				}
 			},
