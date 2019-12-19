@@ -1,4 +1,4 @@
-import config from './base.config';
+const config = require('./base.config');
 
 const swaggerUri = `${config.uriPrefix}/docs`;
 const authUri = `${config.uriPrefix}/auth`;
@@ -6,7 +6,7 @@ const groupUri = `${config.uriPrefix}/groups`;
 const userUri = `${config.uriPrefix}/users`;
 const teacherUri = `${config.uriPrefix}/teachers`;
 
-export default {
+module.exports = {
 	swaggerUri,
 	authUri,
 	groupUri,

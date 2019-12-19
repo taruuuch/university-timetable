@@ -1,5 +1,5 @@
-import morgan from 'morgan';
-import { createLogger, transports, format } from 'winston';
+const morgan = require('morgan');
+const { createLogger, transports, format } = require('winston');
 
 const logger = createLogger({
   format: format.combine(
@@ -21,7 +21,7 @@ logger.stream = {
   write: message => logger.info(message.substring(0, message.lastIndexOf('\n')))
 };
 
-export default morgan(
+module.exports = morgan(
   ':method :url :status :res[content-length] - :response-time ms',
   { stream: logger.stream }
 );

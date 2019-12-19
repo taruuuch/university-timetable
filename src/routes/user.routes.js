@@ -1,6 +1,6 @@
-import express from 'express';
-import userController from '../controllers/user.controller';
-import authMiddleware from '../middleware/auth.middleware';
+const express = require('express');
+const userController = require('../controllers/user.controller');
+const authMiddleware = require('../middleware/auth.middleware');
 
 const router = express.Router();
 
@@ -9,4 +9,4 @@ router.get('/:userId', authMiddleware, userController.getUserById);
 router.put('/:userId', authMiddleware, userController.setupUser);
 router.post('/:userId', authMiddleware, userController.updateUser);
 
-export default router;
+module.exports = router;

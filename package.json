@@ -7,16 +7,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "babel-node": "babel-node",
     "migration": "node node_modules/db-migrate/bin/db-migrate",
-    "start": "nodemon --exec babel-node src/server.js --ext js --watch ./src",
+    "start": "nodemon --inspect --ext js --watch ./src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/core": "^7.7.0",
-    "@babel/node": "^7.7.0",
-    "@babel/preset-env": "^7.7.1",
     "nodemon": "^1.19.4"
   },
   "dependencies": {
