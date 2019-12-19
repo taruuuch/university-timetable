@@ -6,7 +6,8 @@ const router = express.Router();
 
 router.get('/me', authMiddleware, userController.getUserProfile);
 router.get('/:userId', authMiddleware, userController.getUserById);
-router.put('/:userId', authMiddleware, userController.setupUser);
-router.post('/:userId', authMiddleware, userController.updateUser);
+router.patch('/', authMiddleware, userController.setupUser);
+// router.put('/:userId', authMiddleware, userController.setupUser);
+// router.post('/:userId', authMiddleware, userController.updateUser);
 
 module.exports = router;

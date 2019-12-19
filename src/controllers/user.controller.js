@@ -15,9 +15,9 @@ getUserProfile = async (req, res) => {
 
 			res.status(200).json(user);
 		})
-		.catch(err => {
+		.catch(error => {
 			res.status(500).json({
-				error: err
+				error: error
 			});
 		});
 };
@@ -45,23 +45,31 @@ getUserById = async (req, res) => {
 };
 
 setupUser = async (req, res) => {
-	await User.findByIdAndUpdate(req.decoded.id, req.body, {
-			new: true
-		})
+	const id = req.decoded.id;
+
+	await User.findByIdAndUpdate(id, req.body, { new: true })
 		.then(result => {
-			res.status(200).json(result);
+			let user = {
+				email: result.email,
+				username: result.username,
+				name: {
+					firstName: result.name.firstName,
+					lastName: result.name.lastName
+				}
+			};
+			res.status(200).json(user);
 		})
-		.catch(err => {
+		.catch(error => {
 			res.status(500).json({
-				error: err
+				error: error
 			});
 		});
 };
 
 updateUser = async (req, res) => {
-	await User.findByIdAndUpdate(req.decoded.id, req.body, {
-			new: true
-		})
+	const id = req.decoded.id;
+
+	await User.findByIdAndUpdate(id, req.body, { new: true })
 		.then(result => {
 			res.status(200).json(result);
 		})
