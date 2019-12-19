@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-function connect() {
+async function connect() {
 	mongoose.Promise = global.Promise;
 
 	const mongooseOptions = {
@@ -10,7 +10,7 @@ function connect() {
 		useCreateIndex: true
 	};
 
-	return mongoose.connect(
+	return await mongoose.connect(
 		process.env.DB_URI,
 		mongooseOptions,
 	).then((resolved) => {
@@ -22,13 +22,13 @@ function connect() {
 
 		return resolved;
 	});
-}
-
-function close() {
-	return mongoose.connections.close();
 };
 
-export default {
+async function close() {
+	return await mongoose.connections.close();
+};
+
+module.exports = {
 	connect,
 	close
 };

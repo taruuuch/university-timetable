@@ -7,7 +7,7 @@ const authAccessExpires = process.env.ACCESS_EXPIRES || 36000;
 const authRefreshExpires = process.env.REFRESH_EXPIRES || 36000;
 const uriPrefix = '/api/v1';
 
-export default {
+module.exports = {
 	port,
 	dbUri,
 	dbUser,

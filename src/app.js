@@ -1,14 +1,14 @@
-import express from 'express';
-import bodyParser from  'body-parser';
-import cors from  'cors';
-import swagger from 'swagger-ui-express';
-import swaggerConfig from './api/swagger.v1.json';
-import routesConfig from './config/routes.config';
-import database from './utils/database.util';
-import authRoutes from './routes/auth.routes';
-import groupRoutes from './routes/group.routes';
-import userRoutes from './routes/user.routes';
-import connectLogger from './config/logger.config';
+const express = require('express');
+const bodyParser =  require('body-parser');
+const cors =  require('cors');
+const swagger = require('swagger-ui-express');
+const swaggerConfig = require('./api/swagger.v1.json');
+const routesConfig = require('./config/routes.config');
+const database = require('./utils/database.util');
+const authRoutes = require('./routes/auth.routes');
+const groupRoutes = require('./routes/group.routes');
+const userRoutes = require('./routes/user.routes');
+const connectLogger = require('./config/logger.config');
 
 const app = express();
 
@@ -27,7 +27,7 @@ app.use(bodyParser.json())
 		error.status = 404;
 		error.path = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
 
-		await next(error);
+		next(error);
 	})
 	.use((error, req, res, next) => {
 		res.status(error.status || 500);
@@ -40,4 +40,4 @@ app.use(bodyParser.json())
 		});
 	});
 
-export default app;
+module.exports = app;
