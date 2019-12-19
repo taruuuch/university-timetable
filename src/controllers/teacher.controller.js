@@ -31,15 +31,14 @@ getTeacherById = async (req, res) => {
 };
 
 createTeacher = async (req, res) => {
-	const { firstName, lastName, middleName, departamentId, degreeId, academicId } = req.body;
-	const name = {
-		firstName: firstName,
-		lastName: lastName,
-		middleName: middleName
+	const { name, departamentId, degreeId, academicId } = req.body;
+	const teacherName = {
+		firstName: name.firstName,
+		lastName: name.lastName,
+		middleName: name.middleName
 	};
-
 	const newTeacher = new Teacher({
-		name: name,
+		name: teacherName,
 		departamentId: departamentId,
 		degreeId: degreeId,
 		academicId: academicId
