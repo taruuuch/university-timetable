@@ -5,10 +5,13 @@ const swagger = require('swagger-ui-express');
 const swaggerConfig = require('./api/swagger.v1.json');
 const routesConfig = require('./config/routes.config');
 const database = require('./utils/database.util');
+
 const authRoutes = require('./routes/auth.routes');
 const groupRoutes = require('./routes/group.routes');
 const userRoutes = require('./routes/user.routes');
-const teachersRoutes = require('./routes/teacher.router');
+const teacherRoutes = require('./routes/teacher.router');
+const lessonRoutes = require('./routes/lesson.routes');
+
 const connectLogger = require('./config/logger.config');
 
 const app = express();
@@ -23,7 +26,8 @@ app.use(bodyParser.json())
 	.use(routesConfig.authUri, authRoutes)
 	.use(routesConfig.groupUri, groupRoutes)
 	.use(routesConfig.userUri, userRoutes)
-	.use(routesConfig.teacherUri, teachersRoutes)
+	.use(routesConfig.teacherUri, teacherRoutes)
+	.use(routesConfig.lessonUri, lessonRoutes)
 	.use(async (req, res, next) => {
 		const error = new Error('Api link not found! Go to localhost:8080/api/v1/docs for check available links');
 		error.status = 404;

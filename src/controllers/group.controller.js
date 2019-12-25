@@ -42,12 +42,12 @@ createGroup = async (req, res) => {
 
 	await newGroup.save()
 		.then(result => {
-			res.status(201).json(result)
+			res.status(201).json(result);
 		})
 		.catch(error => {
 			res.status(500).json({
 				error: error
-			})
+			});
 		});
 };
 
