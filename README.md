@@ -2,13 +2,14 @@
 
 Schedule for **university**
 
-
 ## **Features**
 
 _in future :)_
 > yes
 
 ## **Technologies**
+
+**Use MERN stack:**
 
 _Backend_
 
