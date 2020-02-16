@@ -1,6 +1,6 @@
-# **NUBiP Schedule**
+# **University schedule**
 
-Schedule for **National University of Life and Environmental Sciences of Ukraine**
+Schedule for **university**
 
 
 ## **Features**
@@ -23,7 +23,7 @@ _Frontend_
 * React
 * React-router-dom
 * Redux
-* CSS3
+* SCSS
 
 <!-- Test scripts
 
