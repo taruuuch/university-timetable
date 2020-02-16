@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-async function connect() {
+const connect = async () => {
 	mongoose.Promise = global.Promise;
 
 	const mongooseOptions = {
@@ -14,7 +14,7 @@ async function connect() {
 		process.env.DB_URI,
 		mongooseOptions,
 	).then((resolved) => {
-		console.log('Server connected to MongoDB')
+		console.log('Server connected to MongoDB');
 
 		mongoose.connection.on('error', (err) => {
 			console.error(err);
@@ -24,9 +24,7 @@ async function connect() {
 	});
 };
 
-async function close() {
-	return await mongoose.connections.close();
-};
+const close = async () => await mongoose.connections.close();
 
 module.exports = {
 	connect,

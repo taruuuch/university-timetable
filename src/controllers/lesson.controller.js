@@ -35,10 +35,7 @@ getLessonById = async (req, res) => {
 };
 
 createLesson = async (req, res) => {
-	const {  } = req.body;
-	const newLesson = new Lesson({
-
-	});
+	const newLesson = new Lesson(req.body);
 
 	await newLesson.save()
 		.then(lesson => {
