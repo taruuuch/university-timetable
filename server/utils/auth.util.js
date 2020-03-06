@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken')
-const { authSecret, authAccessExpires } = require('../config/base.config')
+const { TOKEN_SECRET, TOKEN_EXPIRES } = require('../config/base.config')
 
 const generateToken = (userId) => {
 	const payload = { id: userId }
-	const options = { expiresIn: authAccessExpires }
+	const options = { expiresIn: TOKEN_EXPIRES }
 
-	return jwt.sign(payload, authSecret, options)
+	return jwt.sign(payload, TOKEN_SECRET, options)
 }
 
 module.exports = {

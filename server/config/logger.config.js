@@ -1,6 +1,6 @@
 const morgan = require('morgan')
-const dayjs = require('dayjs')
 const { createLogger, transports, format } = require('winston')
+const dayjs = require('dayjs')
 
 const logger = createLogger({
   format: format.combine(
@@ -9,7 +9,7 @@ const logger = createLogger({
   ),
   transports: [
     new transports.File({
-      filename: `./src/logs/${dayjs().format('YYYY-MM-DD')}.log`,
+      filename: `./logs/${dayjs().format('YYYY-MM-DD')}.log`,
       json: false,
       maxsize: 5242880,
       maxFiles: 5,

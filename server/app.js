@@ -1,19 +1,14 @@
 const express = require('express')
 const cors = require('cors')
-const database = require('./helpers/database.helper')
 const connectLogger = require('./config/logger.config')
-const setupRoutes = require('./helpers/setupRoutes.helper')
-const setupSwagger = require('./api/swagger.setup')
+const setupRoutes = require('./utils/routes.util')
+const setupSwagger = require('./docs/swagger.setup')
 
 const app = express()
 
-database.connect()
-
-app.use(express.json())
-app.use(express.urlencoded({
-	extended: true
-}))
 app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 app.use(connectLogger)
 
 setupSwagger(app)
