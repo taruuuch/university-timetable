@@ -1,11 +1,11 @@
-const { uriPrefix } = require('./base.config')
+const { URI_PREFIX } = require('./base.config')
 
-const swaggerUri = `${uriPrefix}/docs`
-const authUri = `${uriPrefix}/auth`
-const groupUri = `${uriPrefix}/groups`
-const userUri = `${uriPrefix}/users`
-const teacherUri = `${uriPrefix}/teachers`
-const lessonUri = `${uriPrefix}/lessons`
+const swaggerUri = `${URI_PREFIX}/docs`
+const authUri = `${URI_PREFIX}/auth`
+const groupUri = `${URI_PREFIX}/groups`
+const userUri = `${URI_PREFIX}/users`
+const teacherUri = `${URI_PREFIX}/teachers`
+const lessonUri = `${URI_PREFIX}/lessons`
 
 module.exports = {
 	swaggerUri,

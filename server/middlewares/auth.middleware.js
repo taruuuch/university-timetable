@@ -9,14 +9,14 @@ module.exports = (req, res, next) => {
 
 	token = token.replace('Bearer ', '')
 
-  jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+  jwt.verify(token, process.env.SECRET_KEY, (err, decode) => {
     if (err)
       return res.status(500).send({
 				auth: false,
 				message: 'Failed to authenticate token.'
 			})
 
-		req.decoded = decode
+		req.decode = decode
     next()
   })
 }

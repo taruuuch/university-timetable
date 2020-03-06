@@ -1,25 +1,27 @@
-const uriPrefix = '/api/v1'
+const URI_PREFIX = '/api/v1'
 
 // Server
-const port = process.env.PORT
+const PORT = process.env.PORT
 
 // Database
-const dbUri = process.env.DB_URI
-const dbUser = process.env.DB_USERNAME
-const dbPassowrd = process.env.DB_PASSWORD
+const DB_HOST = process.env.DB_HOST
+const DB_NAME = process.env.DB_NAME
+const DB_USERNAME = process.env.DB_USERNAME
+const DB_PASSWORD = process.env.DB_PASSWORD
 
 // Auth
-const authSecret = process.env.SECRET_KEY || undefined
-const authAccessExpires = process.env.ACCESS_EXPIRES || 36000
-const authRefreshExpires = process.env.REFRESH_EXPIRES || 36000
+const TOKEN_SECRET = process.env.TOKEN_SECRET || undefined
+const TOKEN_EXPIRES = process.env.TOKEN_EXPIRES || 36000
+const TOKEN_REFRESH_EXPIRES = process.env.TOKEN_REFRESH_EXPIRES || 36000
 
 module.exports = {
-	port,
-	dbUri,
-	dbUser,
-	dbPassowrd,
-	authSecret,
-	authAccessExpires,
-	authRefreshExpires,
-	uriPrefix
-};
+	URI_PREFIX,
+	PORT,
+	DB_HOST,
+	DB_NAME,
+	DB_USERNAME,
+	DB_PASSWORD,
+	TOKEN_SECRET,
+	TOKEN_EXPIRES,
+	TOKEN_REFRESH_EXPIRES
+}
