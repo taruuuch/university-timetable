@@ -1,7 +1,7 @@
 const User = require('../models/user.model');
 
 getUserProfile = async (req, res) => {
-	await User.findById(req.decoded.id)
+	await User.findById(req.decode.id)
 		.exec()
 		.then(data => {
 			let user = {
@@ -23,7 +23,7 @@ getUserProfile = async (req, res) => {
 };
 
 getUserById = async (req, res) => {
-	await User.findById(req.decoded.id)
+	await User.findById(req.decode.id)
 		.exec()
 		.then(data => {
 			let user = {
@@ -45,7 +45,7 @@ getUserById = async (req, res) => {
 };
 
 setupUser = async (req, res) => {
-	const id = req.decoded.id;
+	const id = req.decode.id;
 
 	await User.findByIdAndUpdate(id, req.body, { new: true })
 		.then(result => {
@@ -67,7 +67,7 @@ setupUser = async (req, res) => {
 };
 
 updateUser = async (req, res) => {
-	const id = req.decoded.id;
+	const id = req.decode.id;
 
 	await User.findByIdAndUpdate(id, req.body, { new: true })
 		.then(result => {
