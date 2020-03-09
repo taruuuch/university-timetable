@@ -5,6 +5,6 @@ module.exports = app => {
 	app.use(
 		swaggerUri,
 		swagger.serve,
-		swagger.setup(require('./swagger.v1.json'))
+		swagger.setup(require('../docs/swagger.v1.json'))
 	)
 }

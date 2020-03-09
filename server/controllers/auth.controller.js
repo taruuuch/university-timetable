@@ -1,63 +1,69 @@
-const bcrypt = require('bcryptjs');
-const authHelper = require('../helpers/auth.helper');
-const User = require('../models/user.model');
+const bcrypt = require('bcryptjs')
+const { User } = require('../utils/database.util')
+const { TOKEN_EXPIRES } = require('../config/base.config')
+const { generateToken } = require('../utils/auth.util')
 
-registrationUser = async (req, res) => {
-	req.body.password = bcrypt.hashSync(req.body.password, 8);
-	const newUser = new User(req.body);
+const registration = async (req, res) => {
+  try {
+    req.body.password = bcrypt.hashSync(req.body.password, 10)
 
-	await newUser.save()
-		.then(user => {
-			const token = authHelper.generateToken(user._id);
-			res.status(200).json({
-				auth: true,
-				token: token,
-				expires: process.env.ACCESS_EXPIRES
-			});
-		})
-		.catch(error => {
-			res.status(500).json({
-				message: 'There was a problem registering the user.',
-				error: error
-			});
-		});
-};
+    await User.create(req.body)
+      .then(user => {
+        res.status(201).json({
+          auth: true,
+          token: generateToken(user.id),
+          expiresIn: TOKEN_EXPIRES
+        })
+      })
+      .catch(error => {
+        res.status(400).json({
+          auth: false,
+          message: 'There was a problem registering the user',
+          error
+        })
+      })
+  } catch (error) {
+    res.status(500).json({
+      message: 'Error registration new user',
+      error
+    })
+  }
+}
 
-authUser = async (req, res) => {
-	await User.findOne({ email: req.body.email })
-		.exec()
-		.then(user => {
-			if (!user) {
-				res.status(401).json({ message: 'User does not exist!' });
-				return;
-			}
+const login = async (req, res) => {
+  try {
+    const { email, password } = req.body
 
-			const isValid = bcrypt.compareSync(req.body.password, user.password);
+    await User.findOne({ where: { email } })
+      .then(user => {
+        if (!user) {
+          return res.status(401).json({ message: 'User does not exist!' })
+        }
 
-			if (!isValid) {
-				res.status(401).json({ message: 'Invalid credentials! '});
-				return;
-			}
+        const isValid = bcrypt.compareSync(password, user.password)
 
-			const token = authHelper.generateToken(user._id);
+        if (!isValid) {
+          return res.status(401).json({ message: 'Invalid credentials! '})
+        }
 
-			res.status(200).json({
-				auth: true,
-				token: token,
-				expires: process.env.ACCESS_EXPIRES
-			});
-		})
-		.catch(err => res.status(500).json({
-				message: 'Auth error!',
-				error: err
-			})
-		);
-};
+        res.status(200).json({
+          auth: true,
+          token: generateToken(user.id),
+          expires: TOKEN_EXPIRES
+        })
+      })
+  } catch (error) {
+    res.status(500).json({
+      message: 'Auth error!',
+      error
+    })
+  }
+}
 
-refreshToken = async (req, res) => {};
+const refreshToken = async (req, res) => {}
 
 module.exports = {
-	registrationUser,
-	authUser,
+	registration,
+	login,
 	refreshToken
-};
+}

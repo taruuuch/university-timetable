@@ -4,14 +4,14 @@ Schedule for **university**
 
 ## **Features**
 
-_in future :)_
+*in future :)*
 > yes
 
 ## **Technologies**
 
-**Use MERN stack:**
+### **Use MERN stack:**
 
-_Backend_
+#### *Backend*
 
 * Node.js
 * Express
@@ -19,7 +19,7 @@ _Backend_
 * JWT
 * Swagger
 
-_Frontend_
+#### *Frontend*
 
 * React
 * React-router-dom

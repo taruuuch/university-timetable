@@ -1,40 +1,35 @@
-const mongoose = require('mongoose');
-const uuid = require('uuid/v4');
+const { v4: uuid } = require('uuid')
 
-const {
-	Schema
-} = mongoose;
-
-const schema = new Schema({
-	_id: {
-		type: String,
-		default: uuid
-	},
-	username: {
-		type: String,
-		unique: true
-	},
-	email: {
-		type: String,
-		unique: true
-	},
-	password: {
-		type: String,
-	},
-	name: {
-		firstName: {
-			type: String
-		},
-		lastName: {
-			type: String
-		}
-	},
-	status: {
-		type: Number,
-		default: 1
-	}
-}, {
-	versionKey: false
-});
-
-module.exports = mongoose.model('user', schema, 'user');
+module.exports = (sequelize, type) => {
+  return sequelize.define('user', {
+    id: {
+      type: type.UUID,
+      primaryKey: true,
+      allowNull: false,
+      defaultValue: () => uuid(),
+    },
+    email: {
+      type: type.STRING,
+      allowNull: false,
+    },
+    password: {
+      type: type.STRING,
+      allowNull: false,
+    },
+    username: {
+      type: type.STRING,
+      allowNull: true,
+    },
+    fullname: {
+      type: type.STRING,
+      allowNull: true,
+    },
+    status: {
+      type: type.INTEGER,
+      allowNull: true,
+      defaultValue: 1
+    }
+  }, {
+    timestamps: false
+  })
+}

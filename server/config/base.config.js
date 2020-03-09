@@ -1,7 +1,8 @@
 const URI_PREFIX = '/api/v1'
 
 // Server
-const PORT = process.env.PORT
+const URI = process.env.APP_URL
+const PORT = process.env.APP_PORT
 
 // Database
 const DB_HOST = process.env.DB_HOST
@@ -15,8 +16,9 @@ const TOKEN_EXPIRES = process.env.TOKEN_EXPIRES || 36000
 const TOKEN_REFRESH_EXPIRES = process.env.TOKEN_REFRESH_EXPIRES || 36000
 
 module.exports = {
-	URI_PREFIX,
+  URI,
 	PORT,
+  URI_PREFIX,
 	DB_HOST,
 	DB_NAME,
 	DB_USERNAME,

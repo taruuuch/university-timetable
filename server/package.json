@@ -5,14 +5,16 @@
   "private": true,
   "scripts": {
     "migration": "node node_modules/db-migrate/bin/db-migrate",
-    "start": "nodemon -g --inspect --ext js --watch ./src",
+    "start": "nodemon -q server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "open": "^7.0.2"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "chalk": "^3.0.0",
     "cors": "^2.8.5",
     "dayjs": "^1.8.21",
     "dotenv": "^8.2.0",

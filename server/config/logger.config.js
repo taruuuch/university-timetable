@@ -1,4 +1,3 @@
-const morgan = require('morgan')
 const { createLogger, transports, format } = require('winston')
 const dayjs = require('dayjs')
 
@@ -22,7 +21,6 @@ logger.stream = {
   write: message => logger.info(message.substring(0, message.lastIndexOf('\n')))
 }
 
-module.exports = morgan(
-  ':method :url :status :res[content-length] - :response-time ms',
-  { stream: logger.stream }
-)
+module.exports = {
+  logger
+}

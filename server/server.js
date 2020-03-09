@@ -1,15 +1,28 @@
 require('dotenv').config()
-const app = require('./app')
-const { connectDatabase } = require('./utils/database.util')
+const express = require('express')
+const open = require('open')
+const { URI, PORT } = require('./config/base.config')
+const { connectDB } = require('./utils/database.util')
 
-const PORT = process.env.APP_PORT
+const app = express()
 
-const serverStart = async () => {
-  connectDatabase()
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use(require('./utils/logger.util'))
 
-  app.listen(PORT, () => {
-    console.log(`Server start on port ${PORT}`)
+require('./utils/security.util')(app)
+require('./utils/routes.util')(app)
+require('./utils/swagger.util')(app)
+require('./utils/error.util')(app)
+
+connectDB()
+
+try {
+  app.listen(PORT, error => {
+    console.clear()
+    console.log(`🌎 Open in browser: http://${URI}:${PORT}`)
+    // open(`http://${URI}:${PORT}`)
   })
+} catch (error) {
+  console.error(error)
 }
-
-serverStart()

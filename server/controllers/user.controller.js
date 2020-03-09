@@ -1,103 +1,84 @@
-const User = require('../models/user.model');
+const { User } = require('../utils/database.util')
 
-getUserProfile = async (req, res) => {
-	await User.findById(req.decode.id)
-		.exec()
-		.then(data => {
-			let user = {
-				username: data.username,
-				email: data.email,
-				status: data.status
-			};
+const get = async (req, res) => {
+	try {
+    const { id } = req.decode
 
-			if (data.name.firstName !== {}) user.firstName = data.name.firstName;
-			if (data.name.lastName !== {}) user.lastName = data.name.lastName;
+	await User.findByPk(id)
+	  .then(data => {
+      const { id, email, username, fullname, status } = data
 
-			res.status(200).json(user);
-		})
-		.catch(error => {
-			res.status(500).json({
-				error: error
-			});
-		});
-};
+      const user = {
+        id,
+        email,
+        username,
+        fullname,
+        status
+      }
 
-getUserById = async (req, res) => {
-	await User.findById(req.decode.id)
-		.exec()
-		.then(data => {
-			let user = {
-				id: data._id,
-				username: data.username,
-				email: data.email
-			};
+      res.json(user)
+    })
+    .catch(err => res.status(400).json({ message: 'User info not found!' }))
+  } catch (error) {
+    res.status(500).json({
+      error: error
+    })
+  }
+}
 
-			if (data.name.firstName !== {}) user.firstName = data.name.firstName;
-			if (data.name.lastName !== {}) user.lastName = data.name.lastName;
+const getById = async (req, res) => {
+  try {
+    const { userId } = req.params
 
-			res.status(200).json(user);
-		})
-		.catch(err => {
-			res.status(500).json({
-				error: err
-			});
-		});
-};
+    await User.findByPk(userId)
+      .then(data => {
+        const { id, email, username, fullname, status } = data
 
-setupUser = async (req, res) => {
-	const id = req.decode.id;
+        const user = {
+          id,
+          email,
+          username,
+          fullname,
+          status
+        }
 
-	await User.findByIdAndUpdate(id, req.body, { new: true })
-		.then(result => {
-			let user = {
-				email: result.email,
-				username: result.username,
-				name: {
-					firstName: result.name.firstName,
-					lastName: result.name.lastName
-				}
-			};
-			res.status(200).json(user);
-		})
-		.catch(error => {
-			res.status(500).json({
-				error: error
-			});
-		});
-};
+        res.json(user)
+      })
+      .catch(err => res.status(400).json({ message: 'User not found!' }))
+  } catch (error) {
+    res.status(500).json({ error })
+  }
+}
 
-updateUser = async (req, res) => {
-	const id = req.decode.id;
+const setup = async (req, res) => {
+	try {
+    const { id } = req.decode
 
-	await User.findByIdAndUpdate(id, req.body, { new: true })
-		.then(result => {
-			res.status(200).json(result);
-		})
-		.catch(err => {
-			res.status(500).json({
-				error: err
-			});
-		});
-};
+    await User.update(req.body, { where: { id } })
+      .then(result => {
+        if (!!result[0]) {
+          res.json({ message: 'User info update!' })
+        }
+      })
+  } catch (error) {
+    res.status(500).json({
+      message: 'Setup user error!',
+      error
+    })
+  }
+}
 
-checkUsername = async (req, res) => {
-	await User.find({
-			username: req.body.username
-		})
-		.then(result => {
-			res.status(200).json(result);
-		})
-		.catch(err => {
-			res.status(500).json({
-				error: err
-			})
-		});
-};
+const update = async (req, res) => {
+  try {
+
+  } catch (error) {
+
+  }
+}
 
 module.exports = {
-	getUserProfile,
-	getUserById,
-	setupUser,
-	updateUser,
-	checkUsername
-};
+	get,
+	getById,
+	setup,
+	update
+}

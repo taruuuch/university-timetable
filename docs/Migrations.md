@@ -1,45 +1,43 @@
-# **Work with migrations**
+# **Migrations**
 
 ## **Configuration**
 
-First you need to register in **.env** configuration connection uri to mongodb:
+First you need
+
+## **Work with migrations**
+
+### **To db collection**
 
 ```console
-DATABASE_URL="yourUri"
+yarn migration
 ```
 
-## **Migration to db collection**
+### **Up all**
 
 ```console
-yarn migration up -m ./src/migrations --table migration
+yarn migration
 ```
 
-## **Up all**
+### **Up once**
 
 ```console
-yarn migration up -m ./src/migrations
+yarn migration
 ```
 
-## **Up once of migration**
+### **Create**
 
 ```console
-yarn migration up name_of_migration -m ./src/migrations
+yarn migration
 ```
 
-## **Roll back all**
+### **Roll back all**
 
 ```console
-yarn migration down -m ./src/migrations --table migration
+yarn migration
 ```
 
-## **Create**
+### **Reset all**
 
 ```console
-yarn migration create name_of_migration -m ./src/migrations
-```
-
-## **Reset all**
-
-```console
-yarn migration reset -m ./src/migrations --table migration
+yarn migration
 ```

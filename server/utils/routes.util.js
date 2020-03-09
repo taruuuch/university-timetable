@@ -2,8 +2,8 @@ const { authUri, groupUri, lessonUri, userUri, teacherUri } = require('../config
 
 module.exports = app => {
 	app.use(authUri, require('../routes/auth.routes'))
-	app.use(groupUri, require('../routes/group.routes'))
 	app.use(userUri, require('../routes/user.routes'))
-	app.use(teacherUri, require('../routes/teacher.routes'))
-	app.use(lessonUri, require('../routes/lesson.routes'))
+	// app.use(groupUri, require('../routes/group.routes'))
+	// app.use(teacherUri, require('../routes/teacher.routes'))
+	// app.use(lessonUri, require('../routes/lesson.routes'))
 }

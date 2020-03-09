@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+const { TOKEN_SECRET } = require('../config/base.config')
 
 module.exports = (req, res, next) => {
 	let token = req.get('Authorization')
@@ -9,12 +10,13 @@ module.exports = (req, res, next) => {
 
 	token = token.replace('Bearer ', '')
 
-  jwt.verify(token, process.env.SECRET_KEY, (err, decode) => {
-    if (err)
+  jwt.verify(token, TOKEN_SECRET, (err, decode) => {
+    if (err) {
       return res.status(500).send({
 				auth: false,
 				message: 'Failed to authenticate token.'
-			})
+      })
+    }
 
 		req.decode = decode
     next()

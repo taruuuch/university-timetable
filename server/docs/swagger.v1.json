@@ -1,11 +1,11 @@
 {
-	"openapi": "3.0.2",
+	"openapi": "3.0.3",
 	"info": {
-		"title": "NULES Schedule",
+		"title": "University Timetable",
 		"version": "v1"
 	},
 	"servers": [
-			{ "url": "http://localhost:8080/api/v1" }
+      { "url": "http://localhost:8080/api/v1" }
 	],
 	"tags": [
 		{ "name": "Auth" },
@@ -76,7 +76,86 @@
 				}
 			}
 		},
-		"/groups": {
+		"/users/me": {
+			"get": {
+				"tags": ["Users"],
+				"responses": {
+					"200": {
+						"description": "def",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserProfile"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			}
+		},
+		"/users": {
+			"patch": {
+				"tags": ["Users"],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserSetup"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "def",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserProfile"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			}
+		},
+		"/users/{userId}": {
+			"get": {
+        "tags": ["Users"],
+        "parameters": {
+          "name": "userId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "style": "simple"
+        },
+				"responses": {
+					"200": {
+						"description": "def",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserProfile"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{ "oauth2": [] }
+				]
+			}
+    },
+    "/groups": {
 			"get": {
 				"tags": ["Groups"],
 				"responses": {
@@ -215,94 +294,6 @@
 				],
 				"responses": {
 					"200": { "description": "default" }
-				},
-				"security": [
-					{ "oauth2": [] }
-				]
-			}
-		},
-		"/users/me": {
-			"get": {
-				"tags": ["Users"],
-				"responses": {
-					"200": {
-						"description": "def",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/UserProfile"
-								}
-							}
-						}
-					}
-				},
-				"security": [
-					{ "oauth2": [] }
-				]
-			}
-		},
-		"/users": {
-			"patch": {
-				"tags": ["Users"],
-				"requestBody": {
-					"required": true,
-					"content": {
-						"application/json": {
-							"schema": {
-								"$ref": "#/components/schemas/UserSetup"
-							}
-						}
-					}
-				},
-				"responses": {
-					"200": {
-						"description": "def",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/UserProfile"
-								}
-							}
-						}
-					}
-				},
-				"security": [
-					{ "oauth2": [] }
-				]
-			},
-			"post": {
-				"tags": ["Users"],
-				"responses": {
-					"200": {
-						"description": "def",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/UserProfile"
-								}
-							}
-						}
-					}
-				},
-				"security": [
-					{ "oauth2": [] }
-				]
-			}
-		},
-		"/users/{userId}": {
-			"get": {
-				"tags": ["Users"],
-				"responses": {
-					"200": {
-						"description": "def",
-						"content": {
-							"application/json": {
-								"schema": {
-									"$ref": "#/components/schemas/UserProfile"
-								}
-							}
-						}
-					}
 				},
 				"security": [
 					{ "oauth2": [] }
@@ -453,15 +444,37 @@
 		}
 	},
 	"components": {
-		"securitySchemes": {
-			"oauth2": {
-				"type": "apiKey",
-				"description": "Standard Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
-				"name": "Authorization",
-				"in": "header"
-			}
-		},
 		"schemas": {
+			"Login": {
+				"type": "object",
+				"required": [
+					"email",
+					"password"
+				],
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				}
+			},
+			"Registration": {
+				"type": "object",
+				"required": [
+					"email",
+					"password"
+				],
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				}
+			},
 			"User": {
 				"type": "object",
 				"required": [
@@ -536,51 +549,6 @@
 			},
 			"UserUpdate": {
 				"type": "object",
-				"properties": {
-					"username": {
-						"type": "string"
-					},
-					"email": {
-						"type": "string"
-					},
-					"password": {
-						"type": "string"
-					},
-					"name": {
-						"type": "object",
-						"properties": {
-							"firstName": {
-								"type": "string"
-							},
-							"lastName": {
-								"type": "string"
-							}
-						}
-					}
-				}
-			},
-			"Login": {
-				"type": "object",
-				"required": [
-					"email",
-					"password"
-				],
-				"properties": {
-					"email": {
-						"type": "string"
-					},
-					"password": {
-						"type": "string"
-					}
-				}
-			},
-			"Registration": {
-				"type": "object",
-				"required": [
-					"username",
-					"email",
-					"password"
-				],
 				"properties": {
 					"username": {
 						"type": "string"
@@ -823,6 +791,14 @@
 						"type": "string"
 					}
 				}
+			}
+		},
+		"securitySchemes": {
+			"oauth2": {
+				"type": "apiKey",
+				"description": "Standard Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
+				"name": "Authorization",
+				"in": "header"
 			}
 		}
 	}
