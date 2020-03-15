@@ -1,87 +1,87 @@
-const Lesson = require('../models/lesson.model');
+// const Lesson = require('../models/lesson.model');
 
-getLessons = async (req, res) => {
-	await Lesson.find()
-		.exec()
-		.then(lessons => {
-			res.status(200).json(lessons);
-		})
-		.catch(error => {
-			res.status(500).json({
-				error: error
-			});
-		});
-};
+// getLessons = async (req, res) => {
+// 	await Lesson.find()
+// 		.exec()
+// 		.then(lessons => {
+// 			res.status(200).json(lessons);
+// 		})
+// 		.catch(error => {
+// 			res.status(500).json({
+// 				error: error
+// 			});
+// 		});
+// };
 
-getLessonById = async (req, res) => {
-	const id = req.params.groupId;
+// getLessonById = async (req, res) => {
+// 	const id = req.params.groupId;
 
-	await Lesson.findById(id)
-		.exec()
-		.then(lesson => {
-			if (lesson) {
-				res.status(200).json(lesson);
-			} else {
-				res.status(404).json({
-					message: 'No valid entry found for lesson id'
-				});
-			}
-		})
-		.catch(error => {
-			res.status(500).json({
-				error: error
-			});
-		});
-};
+// 	await Lesson.findById(id)
+// 		.exec()
+// 		.then(lesson => {
+// 			if (lesson) {
+// 				res.status(200).json(lesson);
+// 			} else {
+// 				res.status(404).json({
+// 					message: 'No valid entry found for lesson id'
+// 				});
+// 			}
+// 		})
+// 		.catch(error => {
+// 			res.status(500).json({
+// 				error: error
+// 			});
+// 		});
+// };
 
-createLesson = async (req, res) => {
-	const newLesson = new Lesson(req.body);
+// createLesson = async (req, res) => {
+// 	const newLesson = new Lesson(req.body);
 
-	await newLesson.save()
-		.then(lesson => {
-			res.status(201).json(lesson)
-		})
-		.catch(error => {
-			res.status(500).json({
-				error: error
-			})
-		});
-};
+// 	await newLesson.save()
+// 		.then(lesson => {
+// 			res.status(201).json(lesson)
+// 		})
+// 		.catch(error => {
+// 			res.status(500).json({
+// 				error: error
+// 			})
+// 		});
+// };
 
-updateLesson = async (req, res) => {
-	const id = req.params.lessonId;
-	const body = req.body;
+// updateLesson = async (req, res) => {
+// 	const id = req.params.lessonId;
+// 	const body = req.body;
 
-	await Lesson.findByIdAndUpdate(id, body, { new: true })
-		.then(result => {
-			res.status(200).json(result);
-		})
-		.catch(error => {
-			res.status(500).json({
-				error: error
-			});
-		});
-};
+// 	await Lesson.findByIdAndUpdate(id, body, { new: true })
+// 		.then(result => {
+// 			res.status(200).json(result);
+// 		})
+// 		.catch(error => {
+// 			res.status(500).json({
+// 				error: error
+// 			});
+// 		});
+// };
 
-deleteLesson = async (req, res) => {
-	const id = req.params.lessonId;
+// deleteLesson = async (req, res) => {
+// 	const id = req.params.lessonId;
 
-	await Lesson.deleteOne({ _id: id })
-		.exec()
-		.then(result => {
-			res.status(200).json(result);
-		})
-		.catch(error => {
-			res.status(500).json({
-				error: error
-			});
-		});
-};
+// 	await Lesson.deleteOne({ _id: id })
+// 		.exec()
+// 		.then(result => {
+// 			res.status(200).json(result);
+// 		})
+// 		.catch(error => {
+// 			res.status(500).json({
+// 				error: error
+// 			});
+// 		});
+// };
 
-module.exports = {
-	getLessons,
-	getLessonById,
-	createLesson,
-	updateLesson,
-	deleteLesson
-};
+// module.exports = {
+// 	getLessons,
+// 	getLessonById,
+// 	createLesson,
+// 	updateLesson,
+// 	deleteLesson
+// };

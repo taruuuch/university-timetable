@@ -1,6 +1,5 @@
 require('dotenv').config()
 const express = require('express')
-const open = require('open')
 const { URI, PORT } = require('./config/base.config')
 const { connectDB } = require('./utils/database.util')
 
@@ -18,11 +17,10 @@ require('./utils/error.util')(app)
 connectDB()
 
 try {
-  app.listen(PORT, error => {
-    console.clear()
-    console.log(`🌎 Open in browser: http://${URI}:${PORT}`)
-    // open(`http://${URI}:${PORT}`)
-  })
+	app.listen(PORT, error => {
+		console.clear()
+		console.log(`🌎 Open in browser: http://${URI}:${PORT}`)
+	})
 } catch (error) {
-  console.error(error)
+	console.error(error)
 }

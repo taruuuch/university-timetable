@@ -7,10 +7,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-		"client": "yarn --cwd client start",
+    "client": "yarn --cwd client start",
     "server": "yarn --cwd server nodemon -q server.js",
     "migration": "yarn --cwd server migration",
-		"start": "echo \"Error: no prod version specified\" && exit 1",
+    "start": "echo \"Error: no prod version specified\" && exit 1",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

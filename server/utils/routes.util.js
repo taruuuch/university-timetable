@@ -1,4 +1,10 @@
-const { authUri, groupUri, lessonUri, userUri, teacherUri } = require('../config/routes.config')
+const {
+	authUri,
+	// groupUri,
+	// lessonUri,
+	userUri,
+	// teacherUri
+} = require('../config/routes.config')
 
 module.exports = app => {
 	app.use(authUri, require('../routes/auth.routes'))

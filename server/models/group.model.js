@@ -1,5 +1,5 @@
-const {} = require('sequelize')
-const uuid = require('uuid/v4')
+// const {} = require('sequelize')
+// const uuid = require('uuid/v4')
 
 // const schema = new Schema({
 // 	_id: {

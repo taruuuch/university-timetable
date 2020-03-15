@@ -1,6 +1,6 @@
 const { URI_PREFIX } = require('./base.config')
 
-const swaggerUri = `/`
+const swaggerUri = '/'
 const authUri = `${URI_PREFIX}/auth`
 const groupUri = `${URI_PREFIX}/groups`
 const userUri = `${URI_PREFIX}/users`

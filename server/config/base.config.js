@@ -16,9 +16,9 @@ const TOKEN_EXPIRES = process.env.TOKEN_EXPIRES || 36000
 const TOKEN_REFRESH_EXPIRES = process.env.TOKEN_REFRESH_EXPIRES || 36000
 
 module.exports = {
-  URI,
+	URI,
 	PORT,
-  URI_PREFIX,
+	URI_PREFIX,
 	DB_HOST,
 	DB_NAME,
 	DB_USERNAME,
